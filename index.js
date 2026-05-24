@@ -7,7 +7,7 @@ export const TY = {
   display:   { font: F.serif, size: "var(--fs-display)",   weight: 500, ls: "-0.02em", lh: 1.1 },
   headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: 500, ls: "-0.02em", lh: 1.1 },
   headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: 500, ls: "-0.04em", lh: 1.1 },
-  quote:     { font: F.serif, size: "var(--fs-headingm)",  weight: 500, ls: "-0.04em", lh: 1.5 },
+  quote:     { font: F.serif, size: "var(--fs-quote)",     weight: 500, ls: "-0.04em", lh: 1.5 },
   headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: 500, ls: "-0.04em", lh: 1.2 },
   headingXS: { font: F.serif, size: "var(--fs-headingxs)", weight: 500, ls: "-0.04em", lh: 1.2 },
   caps:      { font: F.sans,  size: "var(--fs-caps)",    weight: 300, ls: "0.1em",  lh: 1.5, up: true },
@@ -31,8 +31,8 @@ export function ty(k, extra = {}) {
 
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
-  :root{--fs-display:100px;--fs-headingl:60px;--fs-headingm:38px;--fs-headings:24px;--fs-headingxs:20px;--fs-bodyl:26px;--fs-body:21px;--fs-bodys:16px;--fs-bodyxs:14px;--fs-caps:13px;--fs-button:13px;--fs-navbar:16px}
-  @media(max-width:1440px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px}}
-  @media(max-width:1024px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px}}
-  @media(max-width:768px){:root{--fs-display:58px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:12px;--fs-button:12px;--fs-navbar:16px}}
+  :root{--fs-display:100px;--fs-headingl:60px;--fs-headingm:38px;--fs-headings:24px;--fs-headingxs:20px;--fs-bodyl:26px;--fs-body:21px;--fs-bodys:16px;--fs-bodyxs:14px;--fs-caps:13px;--fs-button:13px;--fs-navbar:16px;--fs-quote:24px}
+  @media(max-width:1440px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-quote:20px}}
+  @media(max-width:1024px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-quote:20px}}
+  @media(max-width:768px){:root{--fs-display:58px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:12px;--fs-button:12px;--fs-navbar:16px;--fs-quote:20px}}
 `
