@@ -30,9 +30,9 @@ export function ty(k, extra = {}) {
 }
 
 export const typographyCSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
   @font-face{font-family:'Century Gothic';src:url('/Century-Gothic-Sans-Font/CenturyGothicPaneuropeanRegular.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
   @font-face{font-family:'Century Gothic';src:url('/Century-Gothic-Sans-Font/CenturyGothicPaneuropeanBold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
-  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
   :root{
     --c-primary:#242424;--c-secondary:#999999;--c-placeholder:rgba(36,36,36,.4);--c-footer-legal:rgba(255,255,255,.4);
     --ff-serif:'Century Gothic',sans-serif;--ff-sans:'Be Vietnam Pro',sans-serif;
