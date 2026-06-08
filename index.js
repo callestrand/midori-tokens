@@ -4,8 +4,8 @@ export const F = {
 }
 
 export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",   weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
-  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
+  display:   { font: F.serif, size: "var(--fs-display)",   weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)",  up: true },
+  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)",  up: true },
   headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)",  up: true },
   quote:     { font: F.serif, size: "var(--fs-quote)",     weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-body)",     up: true },
   headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading-s)", up: true },
