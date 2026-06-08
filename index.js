@@ -30,7 +30,9 @@ export function ty(k, extra = {}) {
 }
 
 export const typographyCSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
+  @font-face{font-family:'Century Gothic';src:url('/Century-Gothic-Sans-Font/CenturyGothicPaneuropeanRegular.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:'Century Gothic';src:url('/Century-Gothic-Sans-Font/CenturyGothicPaneuropeanBold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
   :root{--fs-display:100px;--fs-headingl:60px;--fs-headingm:38px;--fs-headings:24px;--fs-headingxs:20px;--fs-bodyl:26px;--fs-body:21px;--fs-bodys:16px;--fs-bodyxs:14px;--fs-caps:13px;--fs-button:13px;--fs-navbar:16px;--fs-quote:24px}
   @media(max-width:1440px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-quote:20px}}
   @media(max-width:1024px){:root{--fs-display:80px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:22px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-quote:20px}}
