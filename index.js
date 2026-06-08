@@ -4,12 +4,12 @@ export const F = {
 }
 
 export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",   weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
-  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
-  headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)",  up: true },
-  quote:     { font: F.serif, size: "var(--fs-quote)",     weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-body)",     up: true },
-  headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-heading-s)", up: true },
-  headingXS: { font: F.serif, size: "var(--fs-headingxs)", weight: "var(--fw-thin)",  ls: "var(--ls-heading)", lh: "var(--lh-heading-s)", up: true },
+  display:   { font: F.serif, size: "var(--fs-display)",   weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
+  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)"   },
+  headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading)",  up: true },
+  quote:     { font: F.serif, size: "var(--fs-quote)",     weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-body)",     up: true },
+  headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading-s)", up: true },
+  headingXS: { font: F.serif, size: "var(--fs-headingxs)", weight: "var(--fw-light)",  ls: "var(--ls-heading)", lh: "var(--lh-heading-s)", up: true },
   caps:      { font: F.sans,  size: "var(--fs-caps)",      weight: "var(--fw-light)", ls: "var(--ls-caps)",    lh: "var(--lh-body)",     up: true },
   button:    { font: F.sans,  size: "var(--fs-button)",    weight: "var(--fw-light)", ls: "var(--ls-caps)",    lh: "var(--lh-body)",     up: true },
   navbar:    { font: F.sans,  size: "var(--fs-navbar)",    weight: "var(--fw-light)", ls: "0",                 lh: "var(--lh-flat)"     },
