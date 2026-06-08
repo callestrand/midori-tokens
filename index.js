@@ -1,15 +1,15 @@
 export const F = {
-  serif: "'Shippori Mincho', serif",
+  serif: "'Century Gothic', sans-serif",
   sans:  "'Be Vietnam Pro', sans-serif",
 }
 
 export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",   weight: 500, ls: "-0.02em", lh: 1.1 },
-  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: 500, ls: "-0.02em", lh: 1.1 },
-  headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: 500, ls: "-0.04em", lh: 1.1 },
-  quote:     { font: F.serif, size: "var(--fs-quote)",     weight: 500, ls: "-0.04em", lh: 1.5 },
-  headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: 500, ls: "-0.04em", lh: 1.2 },
-  headingXS: { font: F.serif, size: "var(--fs-headingxs)", weight: 500, ls: "-0.04em", lh: 1.2 },
+  display:   { font: F.serif, size: "var(--fs-display)",   weight: 300, ls: "-0.02em", lh: 1.1 },
+  headingL:  { font: F.serif, size: "var(--fs-headingl)",  weight: 300, ls: "-0.02em", lh: 1.1 },
+  headingM:  { font: F.serif, size: "var(--fs-headingm)",  weight: 300, ls: "-0.04em", lh: 1.1, up: true },
+  quote:     { font: F.serif, size: "var(--fs-quote)",     weight: 300, ls: "-0.04em", lh: 1.5, up: true },
+  headingS:  { font: F.serif, size: "var(--fs-headings)",  weight: 300, ls: "-0.04em", lh: 1.2, up: true },
+  headingXS: { font: F.serif, size: "var(--fs-headingxs)", weight: 300, ls: "-0.04em", lh: 1.2, up: true },
   caps:      { font: F.sans,  size: "var(--fs-caps)",    weight: 300, ls: "0.1em",  lh: 1.5, up: true },
   button:    { font: F.sans,  size: "var(--fs-button)",  weight: 300, ls: "0.1em", lh: 1.5, up: true },
   navbar:    { font: F.sans,  size: "var(--fs-navbar)",  weight: 300, ls: "0",      lh: 1   },
