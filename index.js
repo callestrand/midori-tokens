@@ -4,7 +4,7 @@ export const C = {
   white:     "#FFFFFF",
   black:     "#000000",
   beige:     "#F1F1EB",
-  light:     "#FFFFFB",
+  light:     "#fcfcfb",
 }
 
 export const F = {
@@ -41,7 +41,7 @@ export function ty(k, extra = {}) {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap');
   :root{
-    --c-primary:#242424;--c-secondary:#999999;--c-placeholder:rgba(36,36,36,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F1F1EB;--c-light:#FFFFFB;
+    --c-primary:#242424;--c-secondary:#999999;--c-placeholder:rgba(36,36,36,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F1F1EB;--c-light:#fcfcfb;
     --ff-serif:'Shippori Mincho',serif;--ff-sans:'Be Vietnam Pro',sans-serif;
     --fw-thin:200;--fw-light:300;--fw-medium:500;
     --ls-heading:-0.02em;--ls-caps:0.1em;--ls-story:0.12em;
