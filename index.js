@@ -50,6 +50,6 @@ export const typographyCSS = `
     --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;
     --fs-display:58px;--fs-headingl:48px;--fs-headingm:28px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:20px;--fs-body:16px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:12px;--fs-navbar:14px;--fs-navlabel:12px;--fs-quote:20px
   }
-  @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:40px;--fs-headingm:26px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:18px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:11px;--fs-caps:10px;--fs-button:11px;--fs-navbar:13px;--fs-navlabel:11px;--fs-quote:18px}}
-  @media(max-width:768px){:root{--fs-display:40px;--fs-headingl:34px;--fs-headingm:22px;--fs-headings:18px;--fs-headingxs:15px;--fs-bodyl:17px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:11px;--fs-caps:10px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:11px;--fs-quote:16px}}
+  @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:40px;--fs-headingm:26px;--fs-headings:20px;--fs-headingxs:16px;--fs-bodyl:18px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:12px;--fs-caps:10px;--fs-button:11px;--fs-navbar:13px;--fs-navlabel:11px;--fs-quote:18px}}
+  @media(max-width:768px){:root{--fs-display:40px;--fs-headingl:34px;--fs-headingm:22px;--fs-headings:18px;--fs-headingxs:15px;--fs-bodyl:17px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:12px;--fs-caps:10px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:11px;--fs-quote:16px}}
 `
