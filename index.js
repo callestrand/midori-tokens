@@ -14,21 +14,21 @@ export const F = {
 }
 
 export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",   weight: "400", ls: "0.01em",            lh: "1.04"              },
-  headingL:  { font: F.sans,  size: "var(--fs-headingl)",  weight: "700", ls: "-0.02em",            lh: "1.08"              },
-  headingM:  { font: F.sans,  size: "var(--fs-headingm)",  weight: "500", ls: "-0.005em",           lh: "1.25"              },
-  quote:     { font: F.sans,  size: "var(--fs-quote)",     weight: "500", ls: "-0.005em",           lh: "var(--lh-body)"    },
-  headingS:  { font: F.sans,  size: "var(--fs-headings)",  weight: "500", ls: "-0.005em",           lh: "var(--lh-heading-s)"},
-  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "500", ls: "-0.005em",           lh: "var(--lh-heading-s)"},
-  caps:      { font: F.mono,  size: "var(--fs-caps)",      weight: "400", ls: "0.16em",             lh: "var(--lh-body)",   up: true },
-  navLabel:  { font: F.sans,  size: "var(--fs-navlabel)",  weight: "300", ls: "var(--ls-caps)",     lh: "var(--lh-body)",   up: true },
-  button:    { font: F.sans,  size: "var(--fs-button)",    weight: "300", ls: "var(--ls-caps)",     lh: "var(--lh-body)",   up: true },
-  navbar:    { font: F.sans,  size: "var(--fs-navbar)",    weight: "300", ls: "0",                  lh: "var(--lh-flat)"    },
-  bodyL:     { font: F.sans,  size: "var(--fs-bodyl)",     weight: "300", ls: "0",                  lh: "var(--lh-body-l)"  },
-  body:      { font: F.sans,  size: "var(--fs-body)",      weight: "400", ls: "0",                  lh: "1.8"               },
-  bodyS:     { font: F.sans,  size: "var(--fs-bodys)",     weight: "300", ls: "0",                  lh: "var(--lh-body)"    },
-  bodyXS:    { font: F.sans,  size: "var(--fs-bodyxs)",    weight: "300", ls: "0",                  lh: "var(--lh-body)"    },
-  link:      { font: F.sans,  size: "var(--fs-bodys)",     weight: "300", ls: "0",                  lh: "var(--lh-body)"    },
+  display:   { font: F.serif, size: "var(--fs-display)",  weight: "400", ls: "0.01em",   lh: "1.04"               },
+  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "700", ls: "-0.02em",  lh: "1.08"               },
+  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "500", ls: "-0.005em", lh: "1.25"               },
+  quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "500", ls: "-0.005em", lh: "1.8"                },
+  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "500", ls: "-0.005em", lh: "var(--lh-heading-s)"},
+  headingXS: { font: F.sans,  size: "var(--fs-headings)", weight: "500", ls: "-0.005em", lh: "var(--lh-heading-s)"},
+  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
+  navLabel:  { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8",               up: true },
+  button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
+  navbar:    { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyL:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  body:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyS:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyXS:    { font: F.sans,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.8"                },
+  link:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
 }
 
 export function ty(k, extra = {}) {
