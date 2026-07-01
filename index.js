@@ -1,6 +1,6 @@
 export const C = {
-  primary:   "#16201A",
-  secondary: "#8B948C",
+  primary:   "#3D463F",
+  secondary: "#586259",
   white:     "#FFFFFF",
   black:     "#000000",
   beige:     "#F4F5F2",
@@ -43,7 +43,7 @@ export function ty(k, extra = {}) {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
   :root{
-    --c-primary:#16201A;--c-secondary:#8B948C;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
+    --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
     --ff-serif:'Marcellus',serif;--ff-sans:'Zen Kaku Gothic New',sans-serif;--ff-mono:'IBM Plex Mono',monospace;
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
