@@ -23,12 +23,12 @@ export const TY = {
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
   navLabel:  { font: F.sans,  size: "var(--fs-navlabel)", weight: "400", ls: "0",        lh: "1.8",               up: true },
   button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
-  navbar:    { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.5"                },
-  bodyL:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.5"                },
-  body:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.5"                },
-  bodyS:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.5"                },
-  bodyXS:    { font: F.sans,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.5"                },
-  link:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.5"                },
+  navbar:    { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyL:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  body:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyS:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyXS:    { font: F.sans,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.8"                },
+  link:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
 }
 
 export function ty(k, extra = {}) {
