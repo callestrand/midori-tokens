@@ -19,7 +19,7 @@ export const TY = {
   headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "500", ls: "-0.005em", lh: "1.25"               },
   quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "500", ls: "-0.005em", lh: "1.8"                },
   headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "500", ls: "-0.005em", lh: "var(--lh-heading-s)"},
-  headingXS: { font: F.sans,  size: "var(--fs-headings)", weight: "500", ls: "-0.005em", lh: "var(--lh-heading-s)"},
+  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "500", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
   navLabel:  { font: F.sans,  size: "var(--fs-navlabel)", weight: "400", ls: "0",        lh: "1.8",               up: true },
   button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
