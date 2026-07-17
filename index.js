@@ -22,14 +22,14 @@ export const TY = {
   headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
-  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "400", ls: "0",        lh: "1.8",               up: true },
+  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",        lh: "1.8",               up: true },
   button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
-  navbar:    { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyL:     { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyS:     { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.8"                },
-  link:      { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  navbar:    { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  bodyL:     { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  bodyS:     { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",        lh: "1.8"                },
+  link:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
 }
 
 export function ty(k, extra = {}) {
@@ -42,7 +42,7 @@ export function ty(k, extra = {}) {
 }
 
 export const typographyCSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&family=IBM+Plex+Mono:wght@400;500&display=swap');
   :root{
     --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
     --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'IBM Plex Mono',monospace;
