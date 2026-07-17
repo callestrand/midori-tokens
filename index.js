@@ -10,6 +10,7 @@ export const C = {
 export const F = {
   serif: "'Marcellus', serif",
   sans:  "'Marcellus', serif",
+  body:  "'Be Vietnam Pro', sans-serif",
   mono:  "'IBM Plex Mono', monospace",
 }
 
@@ -21,14 +22,14 @@ export const TY = {
   headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
-  navLabel:  { font: F.sans,  size: "var(--fs-navlabel)", weight: "400", ls: "0",        lh: "1.8",               up: true },
+  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "400", ls: "0",        lh: "1.8",               up: true },
   button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "400", ls: "0.16em",   lh: "1.8",               up: true },
-  navbar:    { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyL:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  body:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyS:     { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
-  bodyXS:    { font: F.sans,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.8"                },
-  link:      { font: F.sans,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  navbar:    { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyL:     { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyS:     { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
+  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "400", ls: "0",        lh: "1.8"                },
+  link:      { font: F.body,  size: "var(--fs-body)",     weight: "400", ls: "0",        lh: "1.8"                },
 }
 
 export function ty(k, extra = {}) {
@@ -41,10 +42,10 @@ export function ty(k, extra = {}) {
 }
 
 export const typographyCSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap');
   :root{
     --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
-    --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-mono:'IBM Plex Mono',monospace;
+    --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'IBM Plex Mono',monospace;
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
     --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;
