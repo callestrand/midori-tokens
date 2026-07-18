@@ -13,7 +13,6 @@ export const C = {
   // Surfaces
   whitepaper: "#FFFFFB", // --sm-whitepaper · input field background (matches Vandelay's T.whitepaper)
   // Applied tints (computed, do not modify)
-  surface: "#EEF0EC",  // raised paper surface
   ink80:   "#3D463F",  // body text
   slate70: "#586259",  // muted label
   ashLight:"#A6ADA6",  // text on dark
@@ -91,8 +90,8 @@ export const MOTION = {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
-    --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
-    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-linen:#E4DFD4;--sm-clay:#A69E8E;
+    --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;
+    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-linen:#E4DFD4;--sm-clay:#A69E8E;--sm-whitepaper:#FFFFFB;
     --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'Be Vietnam Pro',sans-serif;
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
