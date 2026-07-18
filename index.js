@@ -35,18 +35,18 @@ export const TY = {
   navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",        lh: "1.8",               up: true },
   button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
   navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",        lh: "1.8"                },
-  bodyL:     { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
-  bodyS:     { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",        lh: "1.8", color: "var(--sm-sumi)" },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8", color: "var(--sm-sumi)" },
+  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",        lh: "1.8", color: "var(--sm-sumi)" },
   bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",        lh: "1.8"                },
-  link:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.8"                },
+  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",        lh: "1.8"                },
 }
 
 export function ty(k, extra = {}) {
   const s = TY[k]
   return {
     fontFamily: s.font, fontSize: s.size, fontWeight: s.weight,
-    letterSpacing: s.ls, lineHeight: s.lh, color: "var(--c-primary)",
+    letterSpacing: s.ls, lineHeight: s.lh, color: s.color || "var(--c-primary)",
     textTransform: s.up ? "uppercase" : "none", ...extra,
   }
 }
@@ -95,8 +95,8 @@ export const typographyCSS = `
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
     --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;
-    --fs-display:58px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:20px;--fs-body:15px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:12px;--fs-navbar:16px;--fs-navlabel:14px;--fs-quote:20px
+    --fs-display:58px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:18px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:12px;--fs-link:13px;--fs-caps:11px;--fs-button:12px;--fs-navbar:16px;--fs-navlabel:14px;--fs-quote:20px
   }
-  @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:18px;--fs-body:14px;--fs-bodys:13px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:18px}}
-  @media(max-width:768px){:root{--fs-display:40px;--fs-headingl:38px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:17px;--fs-body:15px;--fs-bodys:13px;--fs-bodyxs:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:16px}}
+  @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:16px;--fs-body:14px;--fs-bodys:12px;--fs-bodyxs:12px;--fs-link:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:18px}}
+  @media(max-width:768px){:root{--fs-display:40px;--fs-headingl:38px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:16px;--fs-body:14px;--fs-bodys:12px;--fs-bodyxs:12px;--fs-link:12px;--fs-caps:11px;--fs-button:11px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:16px}}
 `
