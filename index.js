@@ -10,6 +10,8 @@ export const C = {
   // Warm neutrals
   linen:  "#E4DFD4",   // --sm-linen  · tags, cards, packaging
   clay:   "#A69E8E",   // --sm-clay   · warm secondary text
+  // Surfaces
+  whitepaper: "#FFFFFB", // --sm-whitepaper · input field background (matches Vandelay's T.whitepaper)
   // Applied tints (computed, do not modify)
   surface: "#EEF0EC",  // raised paper surface
   ink80:   "#3D463F",  // body text
