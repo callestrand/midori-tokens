@@ -7,9 +7,6 @@ export const C = {
   sumi:   "#16201A",   // --sm-sumi   · primary text, dark surfaces
   // Accent
   midori: "#2F4B3A",   // --sm-midori · single accent, use sparingly
-  // Warm neutrals
-  linen:  "#E4DFD4",   // --sm-linen  · tags, cards, packaging
-  clay:   "#A69E8E",   // --sm-clay   · warm secondary text
   // Surfaces
   whitepaper: "#FFFFFB", // --sm-whitepaper · input field background (matches Vandelay's T.whitepaper)
   // Applied tints (computed, do not modify)
@@ -91,7 +88,7 @@ export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
     --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;
-    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-linen:#E4DFD4;--sm-clay:#A69E8E;--sm-whitepaper:#FFFFFB;
+    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-whitepaper:#FFFFFB;
     --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'Be Vietnam Pro',sans-serif;
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
