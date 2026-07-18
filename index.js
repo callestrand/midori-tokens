@@ -79,10 +79,11 @@ export const DIVIDER = {
 }
 
 export const MOTION = {
-  fast:   "120ms ease",
-  base:   "200ms ease",
-  slow:   "400ms ease",
-  spring: "300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+  fast:    "120ms ease",
+  base:    "200ms ease",
+  slow:    "400ms ease",
+  spring:  "300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+  easeOut: "cubic-bezier(.25,.46,.45,.94)",
 }
 
 export const typographyCSS = `
