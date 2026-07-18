@@ -1,10 +1,20 @@
 export const C = {
-  primary:   "#3D463F",
-  secondary: "#586259",
-  white:     "#FFFFFF",
-  black:     "#000000",
-  beige:     "#F4F5F2",
-  light:     "#EEF0EC",
+  // Monochrome base
+  washi:  "#F4F5F2",   // --sm-washi  · page background
+  stone:  "#DDE0DB",   // --sm-stone  · dividers, hover states
+  ash:    "#8B948C",   // --sm-ash    · secondary text, captions
+  slate:  "#48514A",   // --sm-slate  · muted UI, sub-headings
+  sumi:   "#16201A",   // --sm-sumi   · primary text, dark surfaces
+  // Accent
+  midori: "#2F4B3A",   // --sm-midori · single accent, use sparingly
+  // Warm neutrals
+  linen:  "#E4DFD4",   // --sm-linen  · tags, cards, packaging
+  clay:   "#A69E8E",   // --sm-clay   · warm secondary text
+  // Applied tints (computed, do not modify)
+  surface: "#EEF0EC",  // raised paper surface
+  ink80:   "#3D463F",  // body text
+  slate70: "#586259",  // muted label
+  ashLight:"#A6ADA6",  // text on dark
 }
 
 export const F = {
@@ -41,10 +51,45 @@ export function ty(k, extra = {}) {
   }
 }
 
+export const SPACE = {
+  1: "4px", 2: "8px", 3: "12px", 4: "16px",
+  5: "24px", 6: "32px", 7: "48px", 8: "64px",
+  9: "80px", 10: "120px", 11: "160px", 12: "240px",
+}
+
+export const BP = {
+  sm:  "480px",
+  md:  "768px",
+  lg:  "1024px",
+  xl:  "1280px",
+  xxl: "1440px",
+}
+
+export const RADIUS = {
+  none: "0",
+  sm:   "2px",
+  md:   "4px",
+  full: "9999px",
+}
+
+export const DIVIDER = {
+  color:  C.stone,
+  weight: "1px",
+  style:  "solid",
+}
+
+export const MOTION = {
+  fast:   "120ms ease",
+  base:   "200ms ease",
+  slow:   "400ms ease",
+  spring: "300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+}
+
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
     --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;--c-light:#EEF0EC;
+    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-linen:#E4DFD4;--sm-clay:#A69E8E;
     --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'Be Vietnam Pro',sans-serif;
     --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
