@@ -31,7 +31,7 @@ export const TY = {
   headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
   navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",        lh: "1.8",               up: true },
-  button:    { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
+  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
   navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",        lh: "1.8"                },
   bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",        lh: "1.5"                },
   body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.5"                },
