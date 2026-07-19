@@ -1,21 +1,18 @@
 export const C = {
+  // Applied working tints
+  whitepaper: "#FFFFFB", // --sm-whitepaper · pages and modal backgrounds (Vandelay, Moodboard)
+  washi:  "#F4F5F2",   // --sm-washi  · page backgrounds (websites); box/list/table bg (Vandelay)
+  sumi:   "#16201A",   // --sm-sumi   · default body text, dark surfaces
+  slate:  "#48514A",   // --sm-slate  · muted labels
+  ash:    "#8B948C",   // --sm-ash    · text on dark backgrounds
   // Monochrome base
-  washi:  "#F4F5F2",   // --sm-washi  · page background
   stone:  "#DDE0DB",   // --sm-stone  · dividers, hover states
-  ash:    "#8B948C",   // --sm-ash    · secondary text, captions
-  slate:  "#48514A",   // --sm-slate  · muted UI, sub-headings
-  sumi:   "#16201A",   // --sm-sumi   · primary text, dark surfaces
   // Accent
   midori: "#2F4B3A",   // --sm-midori · single accent, use sparingly
   // Surfaces
-  whitepaper: "#FFFFFB", // --sm-whitepaper · input field background (matches Vandelay's T.whitepaper)
   white:   "#FFFFFF",  // --sm-white · pure white · video-bleed section bg, text on video/dark
   imgPlaceholder: "#f0efed", // --sm-imgplaceholder · skeleton bg behind loading imagery
-  // Applied tints (computed, do not modify)
-  ink80:   "#3D463F",  // body text
-  slate70: "#586259",  // muted label
-  ashLight:"#A6ADA6",  // text on dark
-  hairline:"rgba(22,32,26,.12)", // --sm-sumi at 12% — control/hairline borders
+  hairline:"rgba(22,32,26,.12)", // --sm-hairline · sumi at 12% — control/hairline borders
 }
 
 // Translucent overlays. Kept as literals here (the single source) so every
@@ -114,7 +111,7 @@ export const MOTION = {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
-    --c-primary:${C.ink80};--c-secondary:${C.slate70};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
+    --c-primary:${C.sumi};--c-secondary:${C.slate};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
     --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};--sm-hairline:${C.hairline};
     --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
     --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
