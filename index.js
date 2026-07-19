@@ -9,11 +9,24 @@ export const C = {
   midori: "#2F4B3A",   // --sm-midori · single accent, use sparingly
   // Surfaces
   whitepaper: "#FFFFFB", // --sm-whitepaper · input field background (matches Vandelay's T.whitepaper)
+  white:   "#FFFFFF",  // --sm-white · pure white · video-bleed section bg, text on video/dark
+  imgPlaceholder: "#f0efed", // --sm-imgplaceholder · skeleton bg behind loading imagery
   // Applied tints (computed, do not modify)
   ink80:   "#3D463F",  // body text
   slate70: "#586259",  // muted label
   ashLight:"#A6ADA6",  // text on dark
   hairline:"rgba(22,32,26,.12)", // --sm-sumi at 12% — control/hairline borders
+}
+
+// Translucent overlays. Kept as literals here (the single source) so every
+// hover state, scrim, and on-video text value propagates from one place.
+export const OVERLAY = {
+  hoverDark:    "rgba(0,0,0,0.05)",     // transparent button on a light surface, hover
+  hoverLight:   "rgba(255,255,255,0.1)",// transparent button on video/dark, hover
+  solidHover:   "rgba(0,0,0,0.80)",     // solid (primary) button background, hover
+  textOnVideo:  "rgba(255,255,255,0.82)",// caption/body text over video or imagery (--c-on-video)
+  borderOnDark: "rgba(255,255,255,0.1)",// hairline divider on dark surfaces (footer)
+  scrimHero:    "linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.05) 60%,transparent 100%)", // hero video scrim
 }
 
 // Font weights — single source for the numeric weights mirrored by the --fw-* CSS
@@ -101,8 +114,8 @@ export const MOTION = {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
-    --c-primary:${C.ink80};--c-secondary:${C.slate70};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};
-    --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};
+    --c-primary:${C.ink80};--c-secondary:${C.slate70};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
+    --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};
     --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
     --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
     --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;--ls-display:0.01em;--ls-subheading:-0.005em;
