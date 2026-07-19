@@ -13,6 +13,17 @@ export const C = {
   ink80:   "#3D463F",  // body text
   slate70: "#586259",  // muted label
   ashLight:"#A6ADA6",  // text on dark
+  hairline:"rgba(22,32,26,.12)", // --sm-sumi at 12% — control/hairline borders
+}
+
+// Font weights — single source for the numeric weights mirrored by the --fw-* CSS
+// custom properties below. JS consumers (inline styles) read FW.*; CSS reads var(--fw-*).
+export const FW = {
+  light:    300,
+  regular:  400,
+  medium:   500,
+  semibold: 600,
+  bold:     700,
 }
 
 export const F = {
@@ -22,22 +33,25 @@ export const F = {
   mono:  "'Be Vietnam Pro', sans-serif",
 }
 
+// Type roles reference the --ls-*/--lh-* custom properties (defined in typographyCSS)
+// rather than raw literals, so the type scale has a single source. ty() is consumed
+// only in DOM inline styles, where var() resolves; PDFs/emails don't use it.
 export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",  weight: "400", ls: "0.01em",   lh: "1.04"               },
-  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "400", ls: "-0.02em",  lh: "1.08"               },
-  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "400", ls: "-0.005em", lh: "1.25"               },
-  quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "400", ls: "-0.005em", lh: "1.8"                },
-  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
-  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "-0.005em", lh: "var(--lh-heading-s)"},
-  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
-  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",        lh: "1.8",               up: true },
-  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "0.16em",   lh: "1.8",               up: true },
-  navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",        lh: "1.8"                },
-  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",        lh: "1.5"                },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",        lh: "1.5"                },
-  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",        lh: "1.5"                },
-  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",        lh: "1.5"                },
-  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",        lh: "1.5"                },
+  display:   { font: F.serif, size: "var(--fs-display)",  weight: "400", ls: "var(--ls-display)",    lh: "var(--lh-display)"  },
+  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "400", ls: "var(--ls-heading)",    lh: "var(--lh-heading)"  },
+  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
+  quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-body)"     },
+  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
+  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
+  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
+  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",                     lh: "var(--lh-body)",    up: true },
+  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
+  navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",                     lh: "var(--lh-body)"     },
+  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
+  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
+  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
+  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
 }
 
 export function ty(k, extra = {}) {
@@ -87,12 +101,12 @@ export const MOTION = {
 export const typographyCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
   :root{
-    --c-primary:#3D463F;--c-secondary:#586259;--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:#F4F5F2;
-    --sm-washi:#F4F5F2;--sm-stone:#DDE0DB;--sm-ash:#8B948C;--sm-slate:#48514A;--sm-sumi:#16201A;--sm-midori:#2F4B3A;--sm-whitepaper:#FFFFFB;
-    --ff-serif:'Marcellus',serif;--ff-sans:'Marcellus',serif;--ff-body:'Be Vietnam Pro',sans-serif;--ff-mono:'Be Vietnam Pro',sans-serif;
-    --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
-    --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;
-    --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;
+    --c-primary:${C.ink80};--c-secondary:${C.slate70};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};
+    --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};
+    --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
+    --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
+    --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;--ls-display:0.01em;--ls-subheading:-0.005em;
+    --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;--lh-display:1.04;--lh-tight:1.2;--lh-snug:1.3;--lh-normal:1.5;--lh-relaxed:1.6;--lh-loose:1.7;--lh-airy:1.9;
     --fs-display:58px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:22px;--fs-body:18px;--fs-bodys:15px;--fs-bodyxs:13px;--fs-link:15px;--fs-caps:12px;--fs-button:11px;--fs-navbar:16px;--fs-navlabel:14px;--fs-quote:20px
   }
   @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:20px;--fs-body:16px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-link:14px;--fs-caps:11px;--fs-button:10px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:18px}}
