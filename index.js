@@ -48,11 +48,11 @@ export const F = {
 // only in DOM inline styles, where var() resolves; PDFs/emails don't use it.
 export const TY = {
   display:   { font: F.serif, size: "var(--fs-display)",  weight: "400", ls: "var(--ls-display)",    lh: "var(--lh-display)"  },
-  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "400", ls: "var(--ls-heading)",    lh: "var(--lh-heading)"  },
-  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
+  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "400", ls: "var(--ls-heading)",    lh: "var(--lh-snug)"     },
+  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
   quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-body)"     },
-  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
-  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-heading-s)"},
+  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
+  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
   caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
   navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",                     lh: "var(--lh-body)",    up: true },
   button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
