@@ -43,6 +43,20 @@ export const F = {
   mono:  "'Be Vietnam Pro', sans-serif",
 }
 
+// Google Fonts URL, built from the Be Vietnam Pro weights a given medium needs.
+// Marcellus ships a single weight, so it never takes a wght axis.
+const gfHref = (bodyWeights) =>
+  `https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@${bodyWeights.join(";")}&display=swap`
+
+// The web needs only 300 — every role in TY is weight 300 or uses Marcellus.
+// Email needs 600 as well: template bodies support **bold**, which renders <strong>.
+// Inside 300-weight copy CSS resolves <strong> to weight 400, and with only 300
+// available the browser picks that same face, so the emphasis is invisible (measured:
+// identical advance width). Emails therefore load 600 AND set it explicitly via
+// EMAIL_FW_BOLD — relying on <strong>'s default `bolder` is not enough.
+export const EMAIL_FONTS_HREF = gfHref([300, 600])
+export const EMAIL_FW_BOLD = "600"
+
 // ── Raw type scale ────────────────────────────────────────────────────────────
 // THE single numeric source for typography. Everything downstream is generated
 // from these numbers: the --fs-*/--ls-*/--lh-* custom properties below, the
@@ -230,7 +244,7 @@ export const MOTION = {
 }
 
 export const typographyCSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@300&display=swap');
+  @import url('${gfHref([300])}');
   :root{
     --c-primary:${C.sumi};--c-secondary:${C.slate};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
     --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};--sm-hairline:${C.hairline};
