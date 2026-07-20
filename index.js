@@ -144,8 +144,12 @@ export function ty(k, extra = {}) {
 // no support at all), so these are literal values resolved at build time from
 // SCALE. Import these instead of hand-writing px in any email builder.
 //
-// `quote` is the one role that isn't taken from the web scale: email uses a
-// larger serif pull-quote with its own tracking, so it's declared explicitly.
+// `quote` is the one role genuinely declared here rather than derived. It is a
+// display element, not part of the running body scale: the newsletter banner sets it
+// larger than FIXED_BP would give and with its own tracking. It previously read
+// SCALE.fs.quote[0], which looked derived but silently ignored the breakpoint every
+// other role uses — editing quote[1] changed nothing in email, while editing quote[0]
+// for the website moved the newsletter banner.
 // `heading` is weight 400 on purpose: only Marcellus 400 is ever loaded (see the
 // @import in typographyCSS), so any heavier weight is synthesised by the client
 // into a faux-bold that doesn't exist in the typeface.
@@ -156,7 +160,7 @@ export const EMAIL_TY = {
   bodyS:   { font: F.body,  size: `${SCALE.fs.bodys[FIXED_BP]}px`,    weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
   bodyXS:  { font: F.body,  size: `${SCALE.fs.bodyxs[FIXED_BP]}px`,   weight: "300", ls: "0",           lh: `${SCALE.lh.normal}` },
   button:  { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,     weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
-  quote:   { font: F.serif, size: `${SCALE.fs.quote[0]}px`,           weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
+  quote:   { font: F.serif, size: "20px",                             weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
 }
 
 // Renders an EMAIL_TY role as an inline CSS declaration string, for splicing
