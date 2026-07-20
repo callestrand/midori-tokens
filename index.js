@@ -43,6 +43,58 @@ export const F = {
   mono:  "'Be Vietnam Pro', sans-serif",
 }
 
+// ── Raw type scale ────────────────────────────────────────────────────────────
+// THE single numeric source for typography. Everything downstream is generated
+// from these numbers: the --fs-*/--ls-*/--lh-* custom properties below, the
+// email scale (EMAIL_TY) and the print scale (PDF_TY).
+//
+// Never hand-write a size, letter-spacing or line-height anywhere else — a
+// consumer that can't read CSS custom properties (email clients, react-pdf)
+// must import EMAIL_TY/PDF_TY rather than copying literals, which is how the
+// scales silently drifted apart before.
+//
+// fs values are px, one per breakpoint: [desktop, <=1440px, <=768px].
+export const SCALE = {
+  fs: {
+    display:   [58, 48, 40],
+    headingl:  [48, 42, 38],
+    headingm:  [30, 30, 30],
+    headings:  [22, 22, 22],
+    headingxs: [18, 18, 18],
+    bodyl:     [22, 20, 20],
+    body:      [19, 17, 17],
+    bodys:     [15, 14, 14],
+    bodyxs:    [13, 12, 12],
+    link:      [15, 14, 14],
+    caps:      [12, 11, 11],
+    button:    [11, 10, 10],
+    navbar:    [16, 14, 14],
+    navlabel:  [14, 14, 14],
+    quote:     [20, 18, 16],
+  },
+  ls: {
+    heading:    "-0.02em",
+    caps:       "0.16em",
+    story:      "0.12em",
+    display:    "0.01em",
+    subheading: "-0.005em",
+  },
+  lh: {
+    story: 1.05, heading: 1.08, "heading-s": 1.25, "body-l": 1.4, body: 1.8,
+    flat: 1, display: 1.04, tight: 1.2, snug: 1.3, normal: 1.5,
+    relaxed: 1.6, loose: 1.7, airy: 1.9,
+  },
+}
+
+// Breakpoint index used by the non-CSS scales. Email and print render at one
+// fixed size, and the <=1440px step is the closest match to how mail clients
+// lay out an 800px card.
+const FIXED_BP = 1
+
+const fsVars = (i) => Object.entries(SCALE.fs).map(([k, v]) => `--fs-${k}:${v[i]}px`).join(";")
+const lsVars = Object.entries(SCALE.ls).map(([k, v]) => `--ls-${k}:${v}`).join(";")
+const lhVars = Object.entries(SCALE.lh).map(([k, v]) => `--lh-${k}:${v}`).join(";")
+
 // Type roles reference the --ls-*/--lh-* custom properties (defined in typographyCSS)
 // rather than raw literals, so the type scale has a single source. ty() is consumed
 // only in DOM inline styles, where var() resolves; PDFs/emails don't use it.
@@ -70,6 +122,64 @@ export function ty(k, extra = {}) {
     fontFamily: s.font, fontSize: s.size, fontWeight: s.weight,
     letterSpacing: s.ls, lineHeight: s.lh, color: s.color || "var(--c-primary)",
     textTransform: s.up ? "uppercase" : "none", ...extra,
+  }
+}
+
+// ── Email scale ───────────────────────────────────────────────────────────────
+// Email clients can't resolve CSS custom properties (Outlook's Word engine has
+// no support at all), so these are literal values resolved at build time from
+// SCALE. Import these instead of hand-writing px in any email builder.
+//
+// `quote` is the one role that isn't taken from the web scale: email uses a
+// larger serif pull-quote with its own tracking, so it's declared explicitly.
+export const EMAIL_TY = {
+  caps:   { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,  weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
+  body:   { font: F.body,  size: `${SCALE.fs.body[FIXED_BP]}px`,  weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
+  bodyS:  { font: F.body,  size: `${SCALE.fs.bodys[FIXED_BP]}px`, weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
+  button: { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,  weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
+  quote:  { font: F.serif, size: `${SCALE.fs.quote[0]}px`,        weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
+}
+
+// Renders an EMAIL_TY role as an inline CSS declaration string, for splicing
+// into a style="" attribute. `color` is passed per call because the same role
+// appears in both primary and muted colours depending on context.
+export function emailTy(k, color) {
+  const s = EMAIL_TY[k]
+  if (!s) throw new Error(`emailTy: unknown role "${k}"`)
+  return `font-family:${s.font};font-size:${s.size};font-weight:${s.weight};`
+    + (s.ls !== "0" ? `letter-spacing:${s.ls};` : "")
+    + (s.up ? "text-transform:uppercase;" : "")
+    + `line-height:${s.lh};`
+    + (color ? `color:${color};` : "")
+}
+
+// ── Print scale ───────────────────────────────────────────────────────────────
+// react-pdf measures in points, not px, and has no CSS custom properties. The
+// web scale would render far too large on paper, so print is its own declared
+// scale rather than a derivation. `font` values must match the names passed to
+// Font.register() in the consuming app.
+export const PDF_FONTS = {
+  serif: "Marcellus",
+  body:  "BeVietnamPro",
+}
+
+export const PDF_TY = {
+  h1:    { font: PDF_FONTS.serif, size: 22, ls: 0, color: C.sumi },
+  h2:    { font: PDF_FONTS.serif, size: 11, ls: 0, color: C.sumi },
+  body:  { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.sumi },
+  label: { font: PDF_FONTS.body,  size: 8,  ls: 1, color: C.slate, up: true },
+  small: { font: PDF_FONTS.body,  size: 8,  ls: 0, color: C.slate },
+}
+
+// Renders a PDF_TY role as a react-pdf style object.
+export function pdfTy(k, extra = {}) {
+  const s = PDF_TY[k]
+  if (!s) throw new Error(`pdfTy: unknown role "${k}"`)
+  return {
+    fontFamily: s.font, fontSize: s.size, color: s.color,
+    ...(s.ls ? { letterSpacing: s.ls } : {}),
+    ...(s.up ? { textTransform: "uppercase" } : {}),
+    ...extra,
   }
 }
 
@@ -115,10 +225,10 @@ export const typographyCSS = `
     --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};--sm-hairline:${C.hairline};
     --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
     --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
-    --ls-heading:-0.02em;--ls-caps:0.16em;--ls-story:0.12em;--ls-display:0.01em;--ls-subheading:-0.005em;
-    --lh-story:1.05;--lh-heading:1.08;--lh-heading-s:1.25;--lh-body-l:1.4;--lh-body:1.8;--lh-flat:1;--lh-display:1.04;--lh-tight:1.2;--lh-snug:1.3;--lh-normal:1.5;--lh-relaxed:1.6;--lh-loose:1.7;--lh-airy:1.9;
-    --fs-display:58px;--fs-headingl:48px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:22px;--fs-body:19px;--fs-bodys:15px;--fs-bodyxs:13px;--fs-link:15px;--fs-caps:12px;--fs-button:11px;--fs-navbar:16px;--fs-navlabel:14px;--fs-quote:20px
+    ${lsVars};
+    ${lhVars};
+    ${fsVars(0)}
   }
-  @media(max-width:1440px){:root{--fs-display:48px;--fs-headingl:42px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:20px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-link:14px;--fs-caps:11px;--fs-button:10px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:18px}}
-  @media(max-width:768px){:root{--fs-display:40px;--fs-headingl:38px;--fs-headingm:30px;--fs-headings:22px;--fs-headingxs:18px;--fs-bodyl:20px;--fs-body:17px;--fs-bodys:14px;--fs-bodyxs:12px;--fs-link:14px;--fs-caps:11px;--fs-button:10px;--fs-navbar:14px;--fs-navlabel:14px;--fs-quote:16px}}
+  @media(max-width:1440px){:root{${fsVars(1)}}}
+  @media(max-width:768px){:root{${fsVars(2)}}}
 `
