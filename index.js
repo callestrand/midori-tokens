@@ -123,13 +123,16 @@ export const TY = {
   navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",                     lh: "var(--lh-body)",    up: true },
   button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
   navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",                     lh: "var(--lh-body)"     },
-  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
-  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
-  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
-  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)"   },
+  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
 }
 
+// Body roles read --c-body rather than --c-primary. --c-body defaults to sumi
+// and is flipped to slate by any surface painted white or whitepaper, so the
+// background decides the colour instead of each call site. See BODY_ON_PAPER.
 export function ty(k, extra = {}) {
   const s = TY[k]
   return {
@@ -138,6 +141,13 @@ export function ty(k, extra = {}) {
     textTransform: s.up ? "uppercase" : "none", ...extra,
   }
 }
+
+// The inline-style form of the rule below, for consumers that paint a white or
+// whitepaper surface with a JS style object rather than a class:
+//   style={{ background: C.whitepaper, ...BODY_ON_PAPER }}
+// Every body/link descendant then resolves to slate without touching its colour.
+export const BODY_ON_PAPER = { "--c-body": C.slate }
+export const BODY_ON_TINT  = { "--c-body": C.sumi }
 
 // ── Email scale ───────────────────────────────────────────────────────────────
 // Email clients can't resolve CSS custom properties (Outlook's Word engine has
@@ -250,7 +260,7 @@ export const MOTION = {
 export const typographyCSS = `
   @import url('${gfHref([300])}');
   :root{
-    --c-primary:${C.sumi};--c-secondary:${C.slate};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
+    --c-primary:${C.sumi};--c-secondary:${C.slate};--c-body:${C.sumi};--c-placeholder:rgba(22,32,26,.4);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
     --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};--sm-hairline:${C.hairline};
     --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
     --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
@@ -260,4 +270,22 @@ export const typographyCSS = `
   }
   @media(max-width:1440px){:root{${fsVars(1)}}}
   @media(max-width:768px){:root{${fsVars(2)}}}
+
+  /* ── Body colour is a property of the surface, not of the call site ──────────
+     Rule: body copy (bodyL/body/bodyS/bodyXS/link) is slate on a white or
+     whitepaper background, and sumi on every other background (washi, stone,
+     midori, imagery, dark). The body roles resolve --c-body, so a surface only
+     has to declare which tint it painted; every descendant follows.
+
+     Headings, caps, button and navLabel are NOT part of this — they keep
+     --c-primary and stay sumi on every light surface.
+
+     Nesting works: a washi panel inside a whitepaper card re-declares the tint
+     and its own body copy goes back to sumi.
+
+     Dark surfaces are outside this rule — sumi on a dark fill is unreadable, so
+     they keep passing an explicit colour (TEXT.onDark / C.white / --c-on-video)
+     exactly as before. --c-body only arbitrates between the two light tints. */
+  .surface-white,.surface-whitepaper{--c-body:${C.slate}}
+  .surface-washi,.surface-tinted{--c-body:${C.sumi}}
 `
