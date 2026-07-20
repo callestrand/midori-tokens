@@ -168,10 +168,16 @@ export const PDF_FONTS = {
   body:  "BeVietnamPro",
 }
 
+// Be Vietnam Pro is registered in two weights for print. The web only ever loads
+// 300, but PDFs have no other way to mark emphasis — react-pdf can't synthesise a
+// bold, so a real face has to be registered.
+export const PDF_FW = { regular: 300, bold: 600 }
+
 export const PDF_TY = {
   h1:    { font: PDF_FONTS.serif, size: 22, ls: 0, color: C.sumi },
   h2:    { font: PDF_FONTS.serif, size: 11, ls: 0, color: C.sumi },
   body:  { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.sumi },
+  sub:   { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.slate },
   label: { font: PDF_FONTS.body,  size: 8,  ls: 1, color: C.slate, up: true },
   small: { font: PDF_FONTS.body,  size: 8,  ls: 0, color: C.slate },
 }
