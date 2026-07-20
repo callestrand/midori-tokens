@@ -132,12 +132,17 @@ export function ty(k, extra = {}) {
 //
 // `quote` is the one role that isn't taken from the web scale: email uses a
 // larger serif pull-quote with its own tracking, so it's declared explicitly.
+// `heading` is weight 400 on purpose: only Marcellus 400 is ever loaded (see the
+// @import in typographyCSS), so any heavier weight is synthesised by the client
+// into a faux-bold that doesn't exist in the typeface.
 export const EMAIL_TY = {
-  caps:   { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,  weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
-  body:   { font: F.body,  size: `${SCALE.fs.body[FIXED_BP]}px`,  weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
-  bodyS:  { font: F.body,  size: `${SCALE.fs.bodys[FIXED_BP]}px`, weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
-  button: { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,  weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
-  quote:  { font: F.serif, size: `${SCALE.fs.quote[0]}px`,        weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
+  heading: { font: F.serif, size: `${SCALE.fs.headings[FIXED_BP]}px`, weight: "400", ls: "0",           lh: `${SCALE.lh.tight}` },
+  caps:    { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,     weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
+  body:    { font: F.body,  size: `${SCALE.fs.body[FIXED_BP]}px`,     weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
+  bodyS:   { font: F.body,  size: `${SCALE.fs.bodys[FIXED_BP]}px`,    weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
+  bodyXS:  { font: F.body,  size: `${SCALE.fs.bodyxs[FIXED_BP]}px`,   weight: "300", ls: "0",           lh: `${SCALE.lh.normal}` },
+  button:  { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,     weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
+  quote:   { font: F.serif, size: `${SCALE.fs.quote[0]}px`,           weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
 }
 
 // Renders an EMAIL_TY role as an inline CSS declaration string, for splicing
