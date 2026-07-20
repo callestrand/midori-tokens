@@ -201,10 +201,13 @@ export const PDF_FONTS = {
 // bold, so a real face has to be registered.
 export const PDF_FW = { regular: 300, bold: 600 }
 
+// Paper is white, so the body-colour rule applies here too: body copy is slate,
+// headings stay sumi. react-pdf has no cascade and no custom properties, so the
+// colour is declared on the role rather than inherited from a surface.
 export const PDF_TY = {
   h1:    { font: PDF_FONTS.serif, size: 22, ls: 0, color: C.sumi },
   h2:    { font: PDF_FONTS.serif, size: 11, ls: 0, color: C.sumi },
-  body:  { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.sumi },
+  body:  { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.slate },
   sub:   { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.slate },
   label: { font: PDF_FONTS.body,  size: 8,  ls: 1, color: C.slate, up: true },
   small: { font: PDF_FONTS.body,  size: 8,  ls: 0, color: C.slate },
