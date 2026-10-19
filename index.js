@@ -164,21 +164,21 @@ export const TY = {
   quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-body)"     },
   headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
   headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
-  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
+  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "var(--fw-label, 300)", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: "caps" },
   // One step under caps, for labels inside dense chrome — calendar weekday headers,
   // timeline stops, status badges — where caps is too loud for the space it gets.
   // Vandelay is the only consumer today; the marketing site has no surface this dense.
   // It exists because those labels were being forced to 9/10px with a fontSize
   // override on top of caps, at 16 call sites, which put them outside the scale.
-  capsXS:    { font: F.mono,  size: "var(--fs-capsxs)",   weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
-  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "300", ls: "0",                     lh: "var(--lh-body)",    up: true },
-  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "300", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: true },
-  navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "300", ls: "0",                     lh: "var(--lh-body)"     },
-  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  link:      { font: F.body,  size: "var(--fs-link)",     weight: "300", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  capsXS:    { font: F.mono,  size: "var(--fs-capsxs)",   weight: "var(--fw-label, 300)", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: "caps" },
+  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "var(--fw-label, 300)", ls: "0",                     lh: "var(--lh-body)",    up: "nav" },
+  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "var(--fw-label, 300)", ls: "var(--ls-button, var(--ls-caps))",       lh: "var(--lh-body)",    up: "button" },
+  navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-body)"     },
+  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  body:      { font: F.body,  size: "var(--fs-body)",     weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+  link:      { font: F.body,  size: "var(--fs-link)",     weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
 }
 
 // Body roles read --c-body rather than --c-primary. --c-body defaults to sumi
@@ -189,7 +189,9 @@ export function ty(k, extra = {}) {
   return {
     fontFamily: s.font, fontSize: s.size, fontWeight: s.weight,
     letterSpacing: s.ls, lineHeight: s.lh, color: s.color || "var(--c-primary)",
-    textTransform: s.up ? "uppercase" : "none", ...extra,
+    // Uppercase is a default, not a law: a consumer may set --tt-caps / --tt-nav / --tt-button
+    // (e.g. `none`) on a root element to turn a role to sentence case without touching call sites.
+    textTransform: s.up ? `var(--tt-${s.up === true ? "caps" : s.up}, uppercase)` : "none", ...extra,
   }
 }
 
