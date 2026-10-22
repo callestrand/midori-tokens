@@ -65,8 +65,9 @@ export const STATUS = {
 // in STATUS above, because it also marks non-status things — the manual-trigger dots
 // in Settings' audit log — and would be the only entry there serving both.
 export const FUNCTIONAL = {
-  danger:  "#c0392b",  // error, overdue, destructive
-  warning: "#B07D3A",  // caution, in-progress, genuine warnings only
+  danger:   "#8E2323",  // error, overdue, destructive — dark red
+  warning:  "#8E2323",  // a warning, or anything that needs attention — the same dark red as danger, never amber
+  progress: "#B07D3A",  // amber: a status that is under way (In production, In transit, pending) — not a warning
   muted:   "#9C9890",  // muted neutral
 }
 
