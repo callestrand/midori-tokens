@@ -326,10 +326,11 @@ export const MOTION = {
 // control, which is why Vandelay moved its buttons onto slate.
 export const BTN = {
   radius:       RADIUS.sm, // 2px — same as every other control
-  height:       36,        // compact (`small`) desktop height, = form-control height
+  height:       28,        // compact (`small`) desktop height
+  heightSmallMobile: 36,   // `small` on a phone, so it stays hittable
   heightMobile: 44,        // minimum comfortable tap target
   pad: {
-    small:   "0 12px",     // paired with `height`, so it sits level beside an input
+    small:   "0 12px",     // paired with `height`
     regular: "12px 32px",
     large:   "11px 32px",  // marketing hero/video CTAs — bodyS type, not caps
   },
@@ -370,7 +371,7 @@ export function btnStyle({
   const v = variants[variant] || variants.black || BTN_VARIANT.black
   const compact = size === "small"
   const height = compact
-    ? (isMobile && touch ? BTN.heightMobile : BTN.height)
+    ? (isMobile ? (touch ? BTN.heightMobile : BTN.heightSmallMobile) : BTN.height)
     : (isMobile ? BTN.heightMobile : undefined)
   return {
     ...ty(size === "large" ? "bodyS" : "button", { color: v.fg }),
