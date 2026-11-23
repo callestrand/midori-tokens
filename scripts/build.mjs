@@ -135,6 +135,16 @@ export const LOGO = {
   png: (variant = "primary") => "logo/png/studio-midori-logo-" + variant + ".png",
 }
 
+/**
+ * The square mark: a saffron panel with SM in ink (favicon, app icon). Files in logo/favicon/: favicon.svg (any size), favicon.ico
+ * (16, 32 and 48), favicon-16/32/48.png, apple-touch-icon.png (180), icon-192.png and icon-512.png (the 512 also serves as a maskable
+ * icon: the letters sit well inside the safe zone). head.html is the designer's snippet for a page's <head>.
+ */
+export const FAVICON = {
+  svg: "logo/favicon/favicon.svg", ico: "logo/favicon/favicon.ico", appleTouch: "logo/favicon/apple-touch-icon.png",
+  png: { 16: "logo/favicon/favicon-16.png", 32: "logo/favicon/favicon-32.png", 48: "logo/favicon/favicon-48.png", 192: "logo/favicon/icon-192.png", 512: "logo/favicon/icon-512.png" },
+}
+
 /** Text styles for the web (display is fluid). */
 export const TYPE = ${j(type)}
 /** The same styles with fixed px values, for mail. */

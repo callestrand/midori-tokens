@@ -27,7 +27,7 @@ client portal and PDFs), generated from the system built in Claude Design.
 The **saffron one is primary**. It is a panel with the name set in ink, so it works on any ground and in a mail's dark mode.
 `LOGO` in `index.js` names the files. Use the svg on the web and the png where svg cannot be drawn (mail, pdf: resize a copy, don't
 ship 3880 px). The files are copied into the repos that serve them (the website's `public/images`, Vandelay's `public/`): this folder
-is the master. There is no square mark yet (favicon, app icon).
+is the master. The square mark (`FAVICON`, `logo/favicon/`: svg, ico, png sizes, apple-touch and app icons) is the same saffron panel with SM in ink.
 
 ## Re-syncing from Claude Design
 

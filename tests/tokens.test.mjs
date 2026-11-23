@@ -71,3 +71,9 @@ test("the logo: every variant exists as svg and png, and an svg carries no scrip
   }
   assert.equal(LOGO.primary, LOGO.svg("primary"))
 })
+
+test("the favicon set exists and the svg carries no script", async () => {
+  const { FAVICON } = await import("../index.js")
+  assert.doesNotMatch(read(FAVICON.svg), /<script|onload=|href="http/i)
+  for (const f of [FAVICON.ico, FAVICON.appleTouch, ...Object.values(FAVICON.png)]) assert.ok(read(f).length > 100, f)
+})
