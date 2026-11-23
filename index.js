@@ -208,6 +208,20 @@ export const FONT = {
 export const EMAIL_FONTS_HREF = "https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400&display=swap"
 export const EMAIL = { width: 600 }
 
+/**
+ * The logotype: a saffron panel with STUDIO MIDORI in ink (text turned into shapes). The files are in logo/ (svg for the web, png at
+ * 3880 × 1000 for everything that cannot draw an svg: mail, pdf). `primary` is the saffron one; the others are the same panel in the
+ * other palette colours: linen and ink as grounds, carriage, peacock, terracotta, rose and teak as colour fields.
+ */
+export const LOGO = {
+  width: 388.8, height: 100, aspect: 3.888,
+  primary: "logo/svg/studio-midori-logo-primary.svg",
+  primaryPng: "logo/png/studio-midori-logo-primary.png",
+  variants: ["primary", "carriage", "peacock", "terracotta", "rose", "teak", "linen", "ink"],
+  svg: (variant = "primary") => "logo/svg/studio-midori-logo-" + variant + ".svg",
+  png: (variant = "primary") => "logo/png/studio-midori-logo-" + variant + ".png",
+}
+
 /** Text styles for the web (display is fluid). */
 export const TYPE = {
   "display": {

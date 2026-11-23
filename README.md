@@ -21,6 +21,14 @@ client portal and PDFs), generated from the system built in Claude Design.
 - **Mail:** hex only, `FONT.email` (single quotes, falls back to Courier in Gmail and Outlook), 600px (`EMAIL.width`),
   `emailTy("label")` for inline styles, `EMAIL_FONTS_HREF` in the `<head>`. Wordmark and big numbers as images.
 
+## The logo
+
+`logo/` holds the logotype in eight colours (`svg/` and `png/`, 3880 × 1000), with `overview.png` and the designer's note (`README-sv.txt`).
+The **saffron one is primary**. It is a panel with the name set in ink, so it works on any ground and in a mail's dark mode.
+`LOGO` in `index.js` names the files. Use the svg on the web and the png where svg cannot be drawn (mail, pdf: resize a copy, don't
+ship 3880 px). The files are copied into the repos that serve them (the website's `public/images`, Vandelay's `public/`): this folder
+is the master. There is no square mark yet (favicon, app icon).
+
 ## Re-syncing from Claude Design
 
 1. Read the design system artifact (`project/tokens.json`, `project/components/bundle.css`, `project/README.md`,

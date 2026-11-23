@@ -59,3 +59,15 @@ test("mail output: single-quoted stack, px line-height, capitals only where the 
   assert.doesNotMatch(emailTy("body"), /text-transform/)
   assert.throws(() => emailTy("nope"))
 })
+
+test("the logo: every variant exists as svg and png, and an svg carries no script", async () => {
+  const { LOGO } = await import("../index.js")
+  assert.equal(LOGO.variants.length, 8)
+  for (const v of LOGO.variants) {
+    const svg = read(LOGO.svg(v))
+    assert.match(svg, /^<svg /)
+    assert.doesNotMatch(svg, /<script|onload=|href="http/i)
+    assert.ok(read(LOGO.png(v)).length > 1000, v)
+  }
+  assert.equal(LOGO.primary, LOGO.svg("primary"))
+})
