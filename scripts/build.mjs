@@ -136,7 +136,7 @@ export function ty(name, extra = {}) {
     lineHeight: s.lineHeight,
     fontWeight: s.fontWeight,
     letterSpacing: s.letterSpacing,
-    ...(s.uppercase ? { textTransform: "uppercase" } : {}),
+    textTransform: s.uppercase ? "uppercase" : "none",
     color: "var(--text)",
     ...extra,
   }
