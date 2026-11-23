@@ -1,0 +1,12 @@
+{
+  "name": "@studio-midori/tokens",
+  "version": "2.0.0-brand",
+  "private": true,
+  "type": "module",
+  "description": "Studio Midori brand tokens, generated from the Claude Design system",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test"
+  }
+}

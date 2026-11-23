@@ -1,0 +1,94 @@
+{
+  "name": "Studio Midori",
+  "palette": {
+    "linen": {
+      "50": "#fbf6ec",
+      "100": "#f4ecdc",
+      "200": "#e9dcc3",
+      "300": "#d6c4a5"
+    },
+    "stone": {
+      "500": "#8a7864",
+      "700": "#6b5a4c"
+    },
+    "ink": {
+      "900": "#2a1f1a"
+    },
+    "saffron": {
+      "300": "#f0c46e",
+      "500": "#e0a030",
+      "700": "#a8711a"
+    },
+    "carriage": {
+      "300": "#b7d6e2",
+      "500": "#7fb0c6",
+      "700": "#3f7690"
+    },
+    "peacock": {
+      "300": "#6fa3a0",
+      "500": "#2c6e6c",
+      "700": "#17484a"
+    },
+    "terracotta": {
+      "300": "#e29a7e",
+      "500": "#c0603f",
+      "700": "#8a3b25"
+    },
+    "rose": {
+      "300": "#f0c3bd",
+      "500": "#d98a87",
+      "700": "#a3524f"
+    },
+    "teak": {
+      "300": "#c9a27a",
+      "500": "#9a6a3f",
+      "700": "#5e3e22"
+    }
+  },
+  "roles": {
+    "bg": "linen-100",
+    "surface": "linen-50",
+    "surface-muted": "linen-200",
+    "text": "ink-900",
+    "text-muted": "stone-700",
+    "border": "linen-300",
+    "border-strong": "stone-500",
+    "accent": "saffron-500",
+    "on-accent": "ink-900",
+    "link": "peacock-500",
+    "focus": "peacock-500",
+    "danger": "terracotta-700"
+  },
+  "rules": [
+    "Det mesta av ytan är linnepapper (--bg) med bläcktext. Färg används som stora, platta fält: hela sektioner och bildramar, utan övertoningar eller skuggor.",
+    "Saffran är huvudfärgen. Kupéblått och påfågel följer med den. Terrakotta, rosa och teak används sparsamt, högst en per vy.",
+    "Max tre kulörer samtidigt utöver papper och bläck.",
+    "På saffran, kupéblått, rosa och alla 300-toner är texten alltid --ink-900. På påfågel är texten --linen-100.",
+    "Använd aldrig saffran som textfärg på ljust papper."
+  ],
+  "rulesAdded": [
+    "Mörka toner – ink-900, stone-700, peacock-700, terracotta-700, rose-700 och teak-700: texten är alltid --linen-100.",
+    "På carriage-700 är texten --linen-50 (linen-100 ger för låg kontrast).",
+    "Mellantoner – stone-500, saffron-700, terracotta-500 och teak-500: ingen textfärg når 4.5:1. Använd dem som platta fält utan brödtext, eller bara med stor rubriktext (--ink-900, på teak-500 --linen-50)."
+  ],
+  "textOn": {
+    "linen-100": "ink-900",
+    "linen-50": "ink-900",
+    "all-300": "ink-900",
+    "saffron-500": "ink-900",
+    "carriage-500": "ink-900",
+    "rose-500": "ink-900",
+    "peacock-500": "linen-100",
+    "peacock-700": "linen-100",
+    "ink-900": "linen-100",
+    "stone-700": "linen-100",
+    "terracotta-700": "linen-100",
+    "rose-700": "linen-100",
+    "teak-700": "linen-100",
+    "carriage-700": "linen-50",
+    "stone-500": "no body text (large: ink-900)",
+    "saffron-700": "no body text (large: ink-900)",
+    "terracotta-500": "no body text (large: ink-900)",
+    "teak-500": "no body text (large: linen-50)"
+  }
+}

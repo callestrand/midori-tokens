@@ -1,0 +1,9 @@
+/* Studio Midori — page defaults from the homepage concept's <head>. Load after tokens.css and bundle.css. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-mono);font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;-webkit-font-smoothing:antialiased}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--link)}
+::selection{background:var(--peacock-500);color:var(--linen-100)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

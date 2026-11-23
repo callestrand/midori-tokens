@@ -1,422 +1,313 @@
+// Studio Midori — brand tokens. Generated from tokens.json by scripts/build.mjs. Do not edit.
+//
+// A pure ES module with no imports, so a browser bundle, a Vercel function and a test can all load it by path.
+// Every colour is a resolved hex (mail clients and PDFs cannot read CSS variables); web pages use tokens.css.
+
+/** Every colour by its token name, aliases resolved: COLOR["linen-100"], COLOR.bg, COLOR["on-accent"]. */
+export const COLOR = {
+  "linen-50": "#fbf6ec",
+  "linen-100": "#f4ecdc",
+  "linen-200": "#e9dcc3",
+  "linen-300": "#d6c4a5",
+  "stone-500": "#8a7864",
+  "stone-700": "#6b5a4c",
+  "ink-900": "#2a1f1a",
+  "saffron-300": "#f0c46e",
+  "saffron-500": "#e0a030",
+  "saffron-700": "#a8711a",
+  "carriage-300": "#b7d6e2",
+  "carriage-500": "#7fb0c6",
+  "carriage-700": "#3f7690",
+  "peacock-300": "#6fa3a0",
+  "peacock-500": "#2c6e6c",
+  "peacock-700": "#17484a",
+  "terracotta-300": "#e29a7e",
+  "terracotta-500": "#c0603f",
+  "terracotta-700": "#8a3b25",
+  "rose-300": "#f0c3bd",
+  "rose-500": "#d98a87",
+  "rose-700": "#a3524f",
+  "teak-300": "#c9a27a",
+  "teak-500": "#9a6a3f",
+  "teak-700": "#5e3e22",
+  "bg": "#f4ecdc",
+  "surface": "#fbf6ec",
+  "surface-muted": "#e9dcc3",
+  "text": "#2a1f1a",
+  "text-muted": "#6b5a4c",
+  "border": "#d6c4a5",
+  "border-strong": "#8a7864",
+  "accent": "#e0a030",
+  "on-accent": "#2a1f1a",
+  "link": "#2c6e6c",
+  "focus": "#2c6e6c",
+  "danger": "#8a3b25",
+  "status-neutral-bg": "#e9dcc3",
+  "status-neutral-fg": "#6b5a4c",
+  "status-progress-bg": "#f0c46e",
+  "status-progress-fg": "#2a1f1a",
+  "status-success-bg": "#b7d6e2",
+  "status-success-fg": "#2a1f1a",
+  "status-danger-bg": "#8a3b25",
+  "status-danger-fg": "#f4ecdc"
+}
+/** The same colours with camelCase keys: C.linen100, C.bg, C.onAccent. */
 export const C = {
-  // Applied working tints
-  whitepaper: "#FFFFFB", // --sm-whitepaper · pages and modal backgrounds (Vandelay, Moodboard)
-  washi:  "#F4F5F2",   // --sm-washi  · page backgrounds (websites); box/list/table bg (Vandelay)
-  sumi:   "#16201A",   // --sm-sumi   · default body text, dark surfaces
-  slate:  "#48514A",   // --sm-slate  · muted labels
-  ash:    "#8B948C",   // --sm-ash    · text on dark backgrounds
-  // Monochrome base
-  stone:  "#DDE0DB",   // --sm-stone  · dividers, hover states
-  // Accent
-  midori: "#2F4B3A",   // --sm-midori · single accent, use sparingly
-  // Surfaces
-  white:   "#FFFFFF",  // --sm-white · pure white · video-bleed section bg, text on video/dark
-  imgPlaceholder: "#f0efed", // --sm-imgplaceholder · skeleton bg behind loading imagery
-  hairline:"rgba(22,32,26,.12)", // --sm-hairline · sumi at 12% — control/hairline borders
+  "linen50": "#fbf6ec",
+  "linen100": "#f4ecdc",
+  "linen200": "#e9dcc3",
+  "linen300": "#d6c4a5",
+  "stone500": "#8a7864",
+  "stone700": "#6b5a4c",
+  "ink900": "#2a1f1a",
+  "saffron300": "#f0c46e",
+  "saffron500": "#e0a030",
+  "saffron700": "#a8711a",
+  "carriage300": "#b7d6e2",
+  "carriage500": "#7fb0c6",
+  "carriage700": "#3f7690",
+  "peacock300": "#6fa3a0",
+  "peacock500": "#2c6e6c",
+  "peacock700": "#17484a",
+  "terracotta300": "#e29a7e",
+  "terracotta500": "#c0603f",
+  "terracotta700": "#8a3b25",
+  "rose300": "#f0c3bd",
+  "rose500": "#d98a87",
+  "rose700": "#a3524f",
+  "teak300": "#c9a27a",
+  "teak500": "#9a6a3f",
+  "teak700": "#5e3e22",
+  "bg": "#f4ecdc",
+  "surface": "#fbf6ec",
+  "surfaceMuted": "#e9dcc3",
+  "text": "#2a1f1a",
+  "textMuted": "#6b5a4c",
+  "border": "#d6c4a5",
+  "borderStrong": "#8a7864",
+  "accent": "#e0a030",
+  "onAccent": "#2a1f1a",
+  "link": "#2c6e6c",
+  "focus": "#2c6e6c",
+  "danger": "#8a3b25",
+  "statusNeutralBg": "#e9dcc3",
+  "statusNeutralFg": "#6b5a4c",
+  "statusProgressBg": "#f0c46e",
+  "statusProgressFg": "#2a1f1a",
+  "statusSuccessBg": "#b7d6e2",
+  "statusSuccessFg": "#2a1f1a",
+  "statusDangerBg": "#8a3b25",
+  "statusDangerFg": "#f4ecdc"
 }
-
-// Translucent overlays. Kept as literals here (the single source) so every
-// hover state, scrim, and on-video text value propagates from one place.
-export const OVERLAY = {
-  hoverDark:    "rgba(0,0,0,0.05)",     // transparent button on a light surface, hover
-  hoverLight:   "rgba(255,255,255,0.1)",// transparent button on video/dark, hover
-  solidHover:   "rgba(72,81,74,0.85)",  // filled (primary) button background, hover — slate at 85%
-  textOnVideo:  "rgba(255,255,255,0.82)",// caption/body text over video or imagery (--c-on-video)
-  borderOnDark: "rgba(255,255,255,0.1)",// hairline divider on dark surfaces (footer)
-  scrimHero:    "linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.05) 60%,transparent 100%)", // hero video scrim
+/** Spacing by step: SPACE[4] is 16px, SPACE["4.5"] is 18px. */
+export const SPACE = {
+  "2": "8px",
+  "3": "12px",
+  "4": "16px",
+  "5": "20px",
+  "6": "24px",
+  "8": "32px",
+  "10": "40px",
+  "12": "48px",
+  "14": "56px",
+  "18": "72px",
+  "24": "96px",
+  "30": "120px",
+  "35": "140px",
+  "3.5": "14px",
+  "4.5": "18px"
 }
-
-// Status colours — the only hues outside the monochrome + midori palette above.
-// A single-accent palette cannot make six states tellable apart at a glance, which
-// is what Vandelay's status dots and pills have to do, so these exist as a separate
-// axis rather than being forced onto C.
-//
-// Named by the role a state plays, never by the status that currently wears it: the
-// same colour serves more than one status in more than one map (attention is both an
-// order at the "Fitting" stage and a fitting outcome of "needs alteration"), and the
-// mapping itself belongs to the consumer — STATUS_DOT and PLAYMAKER_STATUSES in
-// Vandelay's lib/utils.js. That file sits below ds.js in the import graph and so
-// cannot reach ds.js's semantic colours; it reads this package directly instead.
-//
-// Naming by role is also what lets a consumer retire a whole map without this file
-// moving: Vandelay dropped ALTERATION_STATUSES in 2026-07 and nothing here needed
-// renaming or repointing — only `empty` lost its last reader. It stays anyway. A
-// token package that deletes entries as consumers churn is one no consumer can
-// safely pin to.
-//
-// Not mirrored as --sm-* custom properties: every consumer is a JS inline style,
-// same as OVERLAY above.
+export const RADIUS = {
+  "none": "0",
+  "sm": "2px"
+}
+/** Grid and page measures (desktop, then the *Mobile ones). Numbers where the value is a plain number. */
+export const LAYOUT = {
+  "columns": 12,
+  "gutter": "24px",
+  "pageMargin": "56px",
+  "sectionTop": "120px",
+  "sectionBottom": "140px",
+  "navHeight": "80px",
+  "hairline": "1px",
+  "measureS": "360px",
+  "measureM": "440px",
+  "measureL": "520px",
+  "breakpoint": "768px",
+  "columnsMobile": 4,
+  "gutterMobile": "16px",
+  "pageMarginMobile": "24px",
+  "sectionTopMobile": "72px",
+  "sectionBottomMobile": "88px",
+  "navHeightMobile": "64px"
+}
+export const RATIO = {
+  "portrait": "3 / 4",
+  "tall": "4 / 5",
+  "square": "1 / 1",
+  "landscape": "4 / 3",
+  "wide": "3 / 2"
+}
+export const BP = { mobile: 768 }
+export const MOTION = {
+  "ease": "cubic-bezier(.2,.7,.2,1)",
+  "hover": ".25s",
+  "image": ".6s",
+  "overlay": ".45s",
+  "slow": ".9s"
+}
+/** Status pairs for the portal. Always write the status out as a word; colour alone never carries it. */
 export const STATUS = {
-  empty:       "#CCCCCC", // no state recorded yet — currently unclaimed, see above
-  idle:        "#AAAAAA", // awaiting an action that has not started
-  provisional: "#C8A96E", // early, not yet committed to
-  attention:   "#7B5EA7", // active and needing someone to act
-  resolved:    "#3D463F", // handed off — sumi's cooler sibling
-  archived:    "#C8C4BC", // closed out, deliberately low-contrast
-}
-
-// Functional colours — meaning-bearing, and deliberately not part of the brand
-// palette: a suit brand's palette should not have to own "this went wrong". They
-// live here rather than in a consumer for the same reason STATUS does — Vandelay's
-// lib/utils.js needs them and cannot import its own ds.js, which is where all three
-// used to live and where they are still re-exported under their existing names.
-//
-// `muted` doubles as a status colour (Vandelay's STATUS_DOT "In Studio") but is not
-// in STATUS above, because it also marks non-status things — the manual-trigger dots
-// in Settings' audit log — and would be the only entry there serving both.
-export const FUNCTIONAL = {
-  danger:   "#A62828",  // error, overdue, destructive — red
-  warning:  "#A62828",  // a warning, or anything that needs attention — the same red as danger, never amber
-  progress: "#B07D3A",  // amber: a status that is under way (In production, In transit, pending) — not a warning
-  muted:   "#9C9890",  // muted neutral
-}
-
-// Font weights — single source for the numeric weights mirrored by the --fw-* CSS
-// custom properties below. JS consumers (inline styles) read FW.*; CSS reads var(--fw-*).
-export const FW = {
-  light:    300,
-  regular:  400,
-  medium:   500,
-  semibold: 600,
-  bold:     700,
-}
-
-export const F = {
-  serif: "'Marcellus', serif",
-  sans:  "'Marcellus', serif",
-  body:  "'Be Vietnam Pro', sans-serif",
-  mono:  "'Be Vietnam Pro', sans-serif",
-}
-
-// Google Fonts URL, built from the Be Vietnam Pro weights a given medium needs.
-// Marcellus ships a single weight, so it never takes a wght axis.
-const gfHref = (bodyWeights) =>
-  `https://fonts.googleapis.com/css2?family=Marcellus&family=Be+Vietnam+Pro:wght@${bodyWeights.join(";")}&display=swap`
-
-// The web needs only 300 — every role in TY is weight 300 or uses Marcellus.
-// Email needs 600 as well: template bodies support **bold**, which renders <strong>.
-// Inside 300-weight copy CSS resolves <strong> to weight 400, and with only 300
-// available the browser picks that same face, so the emphasis is invisible (measured:
-// identical advance width). Emails therefore load 600 AND set it explicitly via
-// EMAIL_FW_BOLD — relying on <strong>'s default `bolder` is not enough.
-export const EMAIL_FONTS_HREF = gfHref([300, 600])
-export const EMAIL_FW_BOLD = "600"
-
-// ── Raw type scale ────────────────────────────────────────────────────────────
-// THE single numeric source for typography. Everything downstream is generated
-// from these numbers: the --fs-*/--ls-*/--lh-* custom properties below, the
-// email scale (EMAIL_TY) and the print scale (PDF_TY).
-//
-// Never hand-write a size, letter-spacing or line-height anywhere else — a
-// consumer that can't read CSS custom properties (email clients, react-pdf)
-// must import EMAIL_TY/PDF_TY rather than copying literals, which is how the
-// scales silently drifted apart before.
-//
-// fs values are px, one per breakpoint: [desktop, <=1440px, <=768px].
-export const SCALE = {
-  fs: {
-    display:   [58, 48, 40],
-    headingl:  [48, 42, 38],
-    headingm:  [30, 30, 30],
-    headings:  [22, 22, 22],
-    headingxs: [18, 18, 18],
-    bodyl:     [22, 20, 20],
-    body:      [19, 17, 17],
-    bodys:     [15, 14, 14],
-    bodyxs:    [13, 12, 12],
-    link:      [15, 14, 14],
-    caps:      [12, 11, 11],
-    capsxs:    [10, 9, 9],
-    button:    [11, 10, 10],
-    navbar:    [16, 14, 14],
-    navlabel:  [14, 14, 14],
-    quote:     [20, 18, 16],
+  "neutral": {
+    "bg": "#e9dcc3",
+    "fg": "#6b5a4c"
   },
-  ls: {
-    heading:    "-0.02em",
-    caps:       "0.16em",
-    story:      "0.12em",
-    display:    "0.01em",
-    subheading: "-0.005em",
+  "progress": {
+    "bg": "#f0c46e",
+    "fg": "#2a1f1a"
   },
-  lh: {
-    story: 1.05, heading: 1.08, "heading-s": 1.25, "body-l": 1.4, body: 1.8,
-    flat: 1, display: 1.04, tight: 1.2, snug: 1.3, normal: 1.5,
-    relaxed: 1.6, loose: 1.7, airy: 1.9,
+  "success": {
+    "bg": "#b7d6e2",
+    "fg": "#2a1f1a"
   },
+  "danger": {
+    "bg": "#8a3b25",
+    "fg": "#f4ecdc"
+  }
+}
+/** Which text colour goes on which fill, from the design system's colour hand-off. */
+export const TEXT_ON = {
+  "linen-100": "ink-900",
+  "linen-50": "ink-900",
+  "all-300": "ink-900",
+  "saffron-500": "ink-900",
+  "carriage-500": "ink-900",
+  "rose-500": "ink-900",
+  "peacock-500": "linen-100",
+  "peacock-700": "linen-100",
+  "ink-900": "linen-100",
+  "stone-700": "linen-100",
+  "terracotta-700": "linen-100",
+  "rose-700": "linen-100",
+  "teak-700": "linen-100",
+  "carriage-700": "linen-50",
+  "stone-500": "no body text (large: ink-900)",
+  "saffron-700": "no body text (large: ink-900)",
+  "terracotta-500": "no body text (large: ink-900)",
+  "teak-500": "no body text (large: linen-50)"
 }
 
-// Breakpoint index used by the non-CSS scales. Email and print render at one
-// fixed size, and the <=1440px step is the closest match to how mail clients
-// lay out an 800px card.
-const FIXED_BP = 1
-
-const fsVars = (i) => Object.entries(SCALE.fs).map(([k, v]) => `--fs-${k}:${v[i]}px`).join(";")
-const lsVars = Object.entries(SCALE.ls).map(([k, v]) => `--ls-${k}:${v}`).join(";")
-const lhVars = Object.entries(SCALE.lh).map(([k, v]) => `--lh-${k}:${v}`).join(";")
-
-// Type roles reference the --ls-*/--lh-* custom properties (defined in typographyCSS)
-// rather than raw literals, so the type scale has a single source. ty() is consumed
-// only in DOM inline styles, where var() resolves; PDFs/emails don't use it.
-export const TY = {
-  display:   { font: F.serif, size: "var(--fs-display)",  weight: "400", ls: "var(--ls-display)",    lh: "var(--lh-display)"  },
-  headingL:  { font: F.sans,  size: "var(--fs-headingl)", weight: "400", ls: "var(--ls-heading)",    lh: "var(--lh-snug)"     },
-  headingM:  { font: F.sans,  size: "var(--fs-headingm)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
-  quote:     { font: F.sans,  size: "var(--fs-quote)",    weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-body)"     },
-  headingS:  { font: F.sans,  size: "var(--fs-headings)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
-  headingXS: { font: F.sans,  size: "var(--fs-headingxs)", weight: "400", ls: "var(--ls-subheading)", lh: "var(--lh-snug)"     },
-  caps:      { font: F.mono,  size: "var(--fs-caps)",     weight: "var(--fw-label, 300)", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: "caps" },
-  // One step under caps, for labels inside dense chrome — calendar weekday headers,
-  // timeline stops, status badges — where caps is too loud for the space it gets.
-  // Vandelay is the only consumer today; the marketing site has no surface this dense.
-  // It exists because those labels were being forced to 9/10px with a fontSize
-  // override on top of caps, at 16 call sites, which put them outside the scale.
-  capsXS:    { font: F.mono,  size: "var(--fs-capsxs)",   weight: "var(--fw-label, 300)", ls: "var(--ls-caps)",       lh: "var(--lh-body)",    up: "caps" },
-  navLabel:  { font: F.body,  size: "var(--fs-navlabel)", weight: "var(--fw-label, 300)", ls: "0",                     lh: "var(--lh-body)",    up: "nav" },
-  button:    { font: F.mono,  size: "var(--fs-button)",   weight: "var(--fw-label, 300)", ls: "var(--ls-button, var(--ls-caps))",       lh: "var(--lh-body)",    up: "button" },
-  navbar:    { font: F.body,  size: "var(--fs-navbar)",   weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-body)"     },
-  bodyL:     { font: F.body,  size: "var(--fs-bodyl)",    weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  body:      { font: F.body,  size: "var(--fs-body)",     weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  bodyS:     { font: F.body,  size: "var(--fs-bodys)",    weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  bodyXS:    { font: F.body,  size: "var(--fs-bodyxs)",   weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
-  link:      { font: F.body,  size: "var(--fs-link)",     weight: "var(--fw-text, 300)", ls: "0",                     lh: "var(--lh-normal)",  color: "var(--c-body)" },
+export const FONT = {
+  family: "Martian Mono",
+  file: "fonts/MartianMono-wght.woff2",
+  mono: "\"Martian Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+  /** For inline styles in HTML mail: single quotes, so it fits inside style="…". */
+  email: "'Martian Mono', 'SF Mono', Menlo, Consolas, 'Courier New', Courier, monospace",
 }
+/** Load Martian Mono in a mail's <head>. Gmail and Outlook ignore it and fall back to the rest of FONT.email. */
+export const EMAIL_FONTS_HREF = "https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400&display=swap"
+export const EMAIL = { width: 600 }
 
-// Body roles read --c-body rather than --c-primary. --c-body defaults to sumi
-// and is flipped to slate by any surface painted white or whitepaper, so the
-// background decides the colour instead of each call site. See BODY_ON_PAPER.
-export function ty(k, extra = {}) {
-  const s = TY[k]
-  return {
-    fontFamily: s.font, fontSize: s.size, fontWeight: s.weight,
-    letterSpacing: s.ls, lineHeight: s.lh, color: s.color || "var(--c-primary)",
-    // Uppercase is a default, not a law: a consumer may set --tt-caps / --tt-nav / --tt-button
-    // (e.g. `none`) on a root element to turn a role to sentence case without touching call sites.
-    textTransform: s.up ? `var(--tt-${s.up === true ? "caps" : s.up}, uppercase)` : "none", ...extra,
+/** Text styles for the web (display is fluid). */
+export const TYPE = {
+  "display": {
+    "fontSize": "clamp(56px, 9vw, 128px)",
+    "lineHeight": "1",
+    "fontWeight": 400,
+    "letterSpacing": "0.02em",
+    "uppercase": false
+  },
+  "body": {
+    "fontSize": "14px",
+    "lineHeight": "1.7",
+    "fontWeight": 400,
+    "letterSpacing": "0.02em",
+    "uppercase": false
+  },
+  "label": {
+    "fontSize": "12px",
+    "lineHeight": "1.2",
+    "fontWeight": 400,
+    "letterSpacing": "0.16em",
+    "uppercase": true
+  },
+  "quote": {
+    "fontSize": "12px",
+    "lineHeight": "2.1",
+    "fontWeight": 400,
+    "letterSpacing": "0.16em",
+    "uppercase": true
+  },
+  "index": {
+    "fontSize": "10px",
+    "lineHeight": "1.2",
+    "fontWeight": 400,
+    "letterSpacing": "0",
+    "uppercase": true
+  }
+}
+/** The same styles with fixed px values, for mail. */
+export const EMAIL_TYPE = {
+  "display": {
+    "fontSize": "128px",
+    "lineHeight": "128px",
+    "fontWeight": 400,
+    "letterSpacing": "0.02em",
+    "uppercase": false
+  },
+  "body": {
+    "fontSize": "14px",
+    "lineHeight": "24px",
+    "fontWeight": 400,
+    "letterSpacing": "0.02em",
+    "uppercase": false
+  },
+  "label": {
+    "fontSize": "12px",
+    "lineHeight": "14px",
+    "fontWeight": 400,
+    "letterSpacing": "0.16em",
+    "uppercase": true
+  },
+  "quote": {
+    "fontSize": "12px",
+    "lineHeight": "25px",
+    "fontWeight": 400,
+    "letterSpacing": "0.16em",
+    "uppercase": true
+  },
+  "index": {
+    "fontSize": "10px",
+    "lineHeight": "12px",
+    "fontWeight": 400,
+    "letterSpacing": "0",
+    "uppercase": true
   }
 }
 
-// The inline-style form of the rule below, for consumers that paint a white or
-// whitepaper surface with a JS style object rather than a class:
-//   style={{ background: C.whitepaper, ...BODY_ON_PAPER }}
-// Every body/link descendant then resolves to slate without touching its colour.
-export const BODY_ON_PAPER = { "--c-body": C.slate }
-export const BODY_ON_TINT  = { "--c-body": C.sumi }
-
-// ── Email scale ───────────────────────────────────────────────────────────────
-// Email clients can't resolve CSS custom properties (Outlook's Word engine has
-// no support at all), so these are literal values resolved at build time from
-// SCALE. Import these instead of hand-writing px in any email builder.
-//
-// `quote` is the one role genuinely declared here rather than derived. It is a
-// display element, not part of the running body scale: the newsletter banner sets it
-// larger than FIXED_BP would give and with its own tracking. It previously read
-// SCALE.fs.quote[0], which looked derived but silently ignored the breakpoint every
-// other role uses — editing quote[1] changed nothing in email, while editing quote[0]
-// for the website moved the newsletter banner.
-// `heading` is weight 400 on purpose: only Marcellus 400 is ever loaded (see the
-// @import in typographyCSS), so any heavier weight is synthesised by the client
-// into a faux-bold that doesn't exist in the typeface.
-export const EMAIL_TY = {
-  heading: { font: F.serif, size: `${SCALE.fs.headings[FIXED_BP]}px`, weight: "400", ls: "0",           lh: `${SCALE.lh.tight}` },
-  caps:    { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,     weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
-  body:    { font: F.body,  size: `${SCALE.fs.body[FIXED_BP]}px`,     weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
-  bodyS:   { font: F.body,  size: `${SCALE.fs.bodys[FIXED_BP]}px`,    weight: "300", ls: "0",           lh: `${SCALE.lh.body}` },
-  bodyXS:  { font: F.body,  size: `${SCALE.fs.bodyxs[FIXED_BP]}px`,   weight: "300", ls: "0",           lh: `${SCALE.lh.normal}` },
-  button:  { font: F.mono,  size: `${SCALE.fs.caps[FIXED_BP]}px`,     weight: "300", ls: SCALE.ls.caps, lh: `${SCALE.lh.body}`, up: true },
-  quote:   { font: F.serif, size: "20px",                             weight: "400", ls: "-0.04em",     lh: `${SCALE.lh.body}` },
-}
-
-// Renders an EMAIL_TY role as an inline CSS declaration string, for splicing
-// into a style="" attribute. `color` is passed per call because the same role
-// appears in both primary and muted colours depending on context.
-export function emailTy(k, color) {
-  const s = EMAIL_TY[k]
-  if (!s) throw new Error(`emailTy: unknown role "${k}"`)
-  return `font-family:${s.font};font-size:${s.size};font-weight:${s.weight};`
-    + (s.ls !== "0" ? `letter-spacing:${s.ls};` : "")
-    + (s.up ? "text-transform:uppercase;" : "")
-    + `line-height:${s.lh};`
-    + (color ? `color:${color};` : "")
-}
-
-// ── Print scale ───────────────────────────────────────────────────────────────
-// react-pdf measures in points, not px, and has no CSS custom properties. The
-// web scale would render far too large on paper, so print is its own declared
-// scale rather than a derivation. `font` values must match the names passed to
-// Font.register() in the consuming app.
-export const PDF_FONTS = {
-  serif: "Marcellus",
-  body:  "BeVietnamPro",
-}
-
-// Be Vietnam Pro is registered in two weights for print. The web only ever loads
-// 300, but PDFs have no other way to mark emphasis — react-pdf can't synthesise a
-// bold, so a real face has to be registered.
-export const PDF_FW = { regular: 300, bold: 600 }
-
-// Paper is white, so the body-colour rule applies here too: body copy is slate,
-// headings stay sumi. react-pdf has no cascade and no custom properties, so the
-// colour is declared on the role rather than inherited from a surface.
-export const PDF_TY = {
-  h1:    { font: PDF_FONTS.serif, size: 22, ls: 0, color: C.sumi },
-  h2:    { font: PDF_FONTS.serif, size: 11, ls: 0, color: C.sumi },
-  body:  { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.slate },
-  sub:   { font: PDF_FONTS.body,  size: 9,  ls: 0, color: C.slate },
-  label: { font: PDF_FONTS.body,  size: 8,  ls: 1, color: C.slate, up: true },
-  small: { font: PDF_FONTS.body,  size: 8,  ls: 0, color: C.slate },
-}
-
-// Renders a PDF_TY role as a react-pdf style object.
-export function pdfTy(k, extra = {}) {
-  const s = PDF_TY[k]
-  if (!s) throw new Error(`pdfTy: unknown role "${k}"`)
+/** A React style object for a text style: ty("label", { color: "var(--accent)" }). */
+export function ty(name, extra = {}) {
+  const s = TYPE[name]
+  if (!s) throw new Error("Unknown type style: " + name)
   return {
-    fontFamily: s.font, fontSize: s.size, color: s.color,
-    ...(s.ls ? { letterSpacing: s.ls } : {}),
-    ...(s.up ? { textTransform: "uppercase" } : {}),
+    fontFamily: FONT.mono,
+    fontSize: s.fontSize,
+    lineHeight: s.lineHeight,
+    fontWeight: s.fontWeight,
+    letterSpacing: s.letterSpacing,
+    ...(s.uppercase ? { textTransform: "uppercase" } : {}),
+    color: "var(--text)",
     ...extra,
   }
 }
 
-export const SPACE = {
-  1: "4px", 2: "8px", 3: "12px", 4: "16px",
-  5: "24px", 6: "32px", 7: "48px", 8: "64px",
-  9: "80px", 10: "120px", 11: "160px", 12: "240px",
+/** An inline CSS declaration string for mail: style="${emailTy("label")}". */
+export function emailTy(name, color = COLOR.text) {
+  const s = EMAIL_TYPE[name]
+  if (!s) throw new Error("Unknown type style: " + name)
+  return "font-family:" + FONT.email + ";font-size:" + s.fontSize + ";line-height:" + s.lineHeight + ";font-weight:" + s.fontWeight +
+    ";letter-spacing:" + s.letterSpacing + (s.uppercase ? ";text-transform:uppercase" : "") + ";color:" + color
 }
 
-export const BP = {
-  sm:  "480px",
-  md:  "768px",
-  lg:  "1024px",
-  xl:  "1280px",
-  xxl: "1440px",
-}
-
-export const RADIUS = {
-  none: "0",
-  sm:   "2px",
-  md:   "4px",
-  full: "9999px",
-}
-
-export const DIVIDER = {
-  color:  C.stone,
-  weight: "1px",
-  style:  "solid",
-}
-
-export const MOTION = {
-  fast:    "120ms ease",
-  base:    "200ms ease",
-  slow:    "400ms ease",
-  spring:  "300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
-  easeOut: "cubic-bezier(.25,.46,.45,.94)",
-}
-
-// ─── Buttons ──────────────────────────────────────────────────────────────────
-// Every button in the brand resolves its styling from here: Vandelay's Btn and
-// PortalBtn, the marketing site's Btn, and the landing splash. Each app used to
-// carry its own copy and they drifted — the website's filled button was sumi
-// while Vandelay's was slate, padding differed by 2px, hover ran at .25s against
-// Vandelay's 150ms, and the website never grew to the mobile tap target.
-//
-// The filled variant is `black` by name and slate by value. Sumi is reserved for
-// text and dark surfaces; a sumi fill reads as a dark surface rather than as a
-// control, which is why Vandelay moved its buttons onto slate.
-export const BTN = {
-  radius:       RADIUS.sm, // 2px — same as every other control
-  height:       36,        // compact (`small`) desktop height, = form-control height
-  heightMobile: 44,        // minimum comfortable tap target
-  pad: {
-    small:   "0 12px",     // paired with `height`, so it sits level beside an input
-    regular: "12px 32px",
-    large:   "11px 32px",  // marketing hero/video CTAs — bodyS type, not caps
-  },
-  transition:      "background 150ms ease, transform 150ms ease",
-  hoverScale:      "scale(1.02)",
-  restScale:       "scale(1)",
-  disabledOpacity: 0.5,
-}
-
-// Variant colour sets. Consumers read `.hover` themselves to wire mouseenter /
-// mouseleave — btnStyle() returns the rest state only, since a hover written into
-// the style object would need a re-render to leave.
-//
-// Functional variants (destructive, and the portal's ghost) are app-local: they
-// extend this table rather than living in it, because the danger colour is not
-// part of the brand palette.
-export const BTN_VARIANT = {
-  black:        { bg: C.slate,       hover: OVERLAY.solidHover,  fg: C.white,      border: C.slate      },
-  outlineBlack: { bg: "transparent", hover: OVERLAY.hoverDark,   fg: C.sumi,       border: C.sumi       },
-  outlineWhite: { bg: "transparent", hover: OVERLAY.hoverLight,  fg: C.whitepaper, border: C.whitepaper },
-}
-
-// Rest-state inline styles for a button.
-//
-//   size:  "small" | "regular" | "large"
-//   touch: opt a small button back into the 44px mobile target. Small buttons
-//          otherwise hold 36px on mobile so they sit level beside the inputs and
-//          selects they accompany (those keep 36px at every width) instead of
-//          towering over them. `touch` is for a standalone small action with no
-//          control beside it to match, where the shorter height only makes it
-//          harder to hit.
-//
-// Pass `variants` to extend BTN_VARIANT with app-local entries.
-export function btnStyle({
-  variant = "black", size = "regular", disabled = false, isMobile = false,
-  touch = false, variants = BTN_VARIANT,
-} = {}) {
-  const v = variants[variant] || variants.black || BTN_VARIANT.black
-  const compact = size === "small"
-  const height = compact
-    ? (isMobile && touch ? BTN.heightMobile : BTN.height)
-    : (isMobile ? BTN.heightMobile : undefined)
-  return {
-    ...ty(size === "large" ? "bodyS" : "button", { color: v.fg }),
-    background: v.bg,
-    border: `1px solid ${v.border}`,
-    borderRadius: BTN.radius,
-    padding: BTN.pad[size] || BTN.pad.regular,
-    display: "inline-flex", alignItems: "center", justifyContent: "center",
-    height, minHeight: height,
-    cursor: disabled ? "not-allowed" : "pointer",
-    opacity: disabled ? BTN.disabledOpacity : 1,
-    whiteSpace: "nowrap", boxSizing: "border-box", flexShrink: 0,
-    textDecoration: "none", // the marketing site renders link buttons as <a>
-    transition: BTN.transition,
-  }
-}
-
-export const typographyCSS = `
-  @import url('${gfHref([300])}');
-  :root{
-    --c-primary:${C.sumi};--c-secondary:${C.slate};--c-body:${C.sumi};--c-placeholder:rgba(22,32,26,.62);--c-footer-legal:rgba(255,255,255,.4);--c-beige:${C.washi};--c-on-video:${OVERLAY.textOnVideo};
-    --sm-washi:${C.washi};--sm-stone:${C.stone};--sm-ash:${C.ash};--sm-slate:${C.slate};--sm-sumi:${C.sumi};--sm-midori:${C.midori};--sm-whitepaper:${C.whitepaper};--sm-white:${C.white};--sm-imgplaceholder:${C.imgPlaceholder};--sm-hairline:${C.hairline};
-    --ff-serif:${F.serif};--ff-sans:${F.sans};--ff-body:${F.body};--ff-mono:${F.mono};
-    --fw-light:${FW.light};--fw-regular:${FW.regular};--fw-medium:${FW.medium};--fw-semibold:${FW.semibold};--fw-bold:${FW.bold};
-    ${lsVars};
-    ${lhVars};
-    ${fsVars(0)}
-  }
-  @media(max-width:1440px){:root{${fsVars(1)}}}
-  @media(max-width:768px){:root{${fsVars(2)}}}
-
-  /* ── Body colour is a property of the surface, not of the call site ──────────
-     Rule: body copy (bodyL/body/bodyS/bodyXS/link) is slate on a white or
-     whitepaper background, and sumi on every other background (washi, stone,
-     midori, imagery, dark). The body roles resolve --c-body, so a surface only
-     has to declare which tint it painted; every descendant follows.
-
-     Headings, caps, button and navLabel are NOT part of this — they keep
-     --c-primary and stay sumi on every light surface.
-
-     Nesting works: a washi panel inside a whitepaper card re-declares the tint
-     and its own body copy goes back to sumi.
-
-     Dark surfaces are outside this rule — sumi on a dark fill is unreadable, so
-     they keep passing an explicit colour (TEXT.onDark / C.white / --c-on-video)
-     exactly as before. --c-body only arbitrates between the two light tints. */
-  .surface-white,.surface-whitepaper{--c-body:${C.slate}}
-  .surface-washi,.surface-tinted{--c-body:${C.sumi}}
-`
+/** The :root block of tokens.css, for a page that injects variables itself (no @font-face: load the font from Google Fonts). */
+export const cssVariables = ":root{\n  --linen-50:#fbf6ec;\n  --linen-100:#f4ecdc;\n  --linen-200:#e9dcc3;\n  --linen-300:#d6c4a5;\n  --stone-500:#8a7864;\n  --stone-700:#6b5a4c;\n  --ink-900:#2a1f1a;\n  --saffron-300:#f0c46e;\n  --saffron-500:#e0a030;\n  --saffron-700:#a8711a;\n  --carriage-300:#b7d6e2;\n  --carriage-500:#7fb0c6;\n  --carriage-700:#3f7690;\n  --peacock-300:#6fa3a0;\n  --peacock-500:#2c6e6c;\n  --peacock-700:#17484a;\n  --terracotta-300:#e29a7e;\n  --terracotta-500:#c0603f;\n  --terracotta-700:#8a3b25;\n  --rose-300:#f0c3bd;\n  --rose-500:#d98a87;\n  --rose-700:#a3524f;\n  --teak-300:#c9a27a;\n  --teak-500:#9a6a3f;\n  --teak-700:#5e3e22;\n  --bg:var(--linen-100);\n  --surface:var(--linen-50);\n  --surface-muted:var(--linen-200);\n  --text:var(--ink-900);\n  --text-muted:var(--stone-700);\n  --border:var(--linen-300);\n  --border-strong:var(--stone-500);\n  --accent:var(--saffron-500);\n  --on-accent:var(--ink-900);\n  --link:var(--peacock-500);\n  --focus:var(--peacock-500);\n  --danger:var(--terracotta-700);\n  --status-neutral-bg:var(--linen-200);\n  --status-neutral-fg:var(--stone-700);\n  --status-progress-bg:var(--saffron-300);\n  --status-progress-fg:var(--ink-900);\n  --status-success-bg:var(--carriage-300);\n  --status-success-fg:var(--ink-900);\n  --status-danger-bg:var(--terracotta-700);\n  --status-danger-fg:var(--linen-100);\n  --space-2:8px;\n  --space-3:12px;\n  --space-3\\.5:14px;\n  --space-4:16px;\n  --space-4\\.5:18px;\n  --space-5:20px;\n  --space-6:24px;\n  --space-8:32px;\n  --space-10:40px;\n  --space-12:48px;\n  --space-14:56px;\n  --space-18:72px;\n  --space-24:96px;\n  --space-30:120px;\n  --space-35:140px;\n  --radius-none:0;\n  --radius-sm:2px;\n  --columns:12;\n  --gutter:24px;\n  --page-margin:56px;\n  --section-top:120px;\n  --section-bottom:140px;\n  --nav-height:80px;\n  --hairline:1px;\n  --measure-s:360px;\n  --measure-m:440px;\n  --measure-l:520px;\n  --breakpoint:768px;\n  --columns-mobile:4;\n  --gutter-mobile:16px;\n  --page-margin-mobile:24px;\n  --section-top-mobile:72px;\n  --section-bottom-mobile:88px;\n  --nav-height-mobile:64px;\n  --ratio-portrait:3 / 4;\n  --ratio-tall:4 / 5;\n  --ratio-square:1 / 1;\n  --ratio-landscape:4 / 3;\n  --ratio-wide:3 / 2;\n  --font-mono:\"Martian Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace;\n  --font-mono-email:\"Martian Mono\", \"SF Mono\", Menlo, Consolas, \"Courier New\", Courier, monospace;\n  --fs-display:clamp(56px, 9vw, 128px);\n  --lh-display:1;\n  --ls-display:0.02em;\n  --fw-display:400;\n  --fs-body:14px;\n  --lh-body:1.7;\n  --ls-body:0.02em;\n  --fw-body:400;\n  --fs-label:12px;\n  --lh-label:1.2;\n  --ls-label:0.16em;\n  --fw-label:400;\n  --fs-quote:12px;\n  --lh-quote:2.1;\n  --ls-quote:0.16em;\n  --fw-quote:400;\n  --fs-index:10px;\n  --lh-index:1.2;\n  --ls-index:0;\n  --fw-index:400;\n  --motion-ease:cubic-bezier(.2,.7,.2,1);\n  --motion-hover:.25s;\n  --motion-image:.6s;\n  --motion-overlay:.45s;\n  --motion-slow:.9s;\n}"
