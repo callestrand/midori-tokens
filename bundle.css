@@ -132,3 +132,6 @@ a.sm-body-link,.sm-body a,.sm-accordion p a{color:var(--text);text-decoration:un
  .sm-footer__grid{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gutter-mobile);row-gap:var(--space-12);padding-top:var(--space-12)}
  .sm-footer__col{grid-column:1 / -1 !important}
 }
+/* Linen 50 is the field colour everywhere: the browser's autofill paints its own (blue) over a field's background, so repaint it. */
+.sm-input:-webkit-autofill,.sm-select:-webkit-autofill,.sm-textarea:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface) inset;-webkit-text-fill-color:var(--text);caret-color:var(--text)}
+.sm-newsletter input:-webkit-autofill{transition:background-color 99999s;-webkit-text-fill-color:var(--text);caret-color:var(--text)}
