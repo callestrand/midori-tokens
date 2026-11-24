@@ -7,7 +7,7 @@ Systemet är **utläst ur hemsidekonceptet (v2)** och färgpaletten. Typsnitt, a
 ## Principer
 
 - **Papper först.** Det mesta av ytan är `linen-100` med `ink-900`-text. Färg är ett medvetet val, inte en tapet.
-- **Ett typsnitt.** Allt är Martian Mono i 400. Menyer, knappar och etiketter är 12px VERSALER med 0.16em spärrning, och längre löptext är 14px med normala gemener. Hierarkin skapas av yta, avstånd och färgfält, inte av vikt.
+- **Ett typsnitt.** Allt är Martian Mono i 400. Menyer, knappar och etiketter är 12px VERSALER med 0.16em spärrning, och längre löptext är 12px med normala gemener. Hierarkin skapas av yta, avstånd och färgfält, inte av vikt.
 - **Stora, platta fält.** Hela sektioner i en färg, bilder utan kant. Inga övertoningar, inga skuggor, hörn 0 eller 2px.
 - **Saffran leder.** `saffron-500` är märkets igenkänningsfärg. `carriage-500` och `peacock` är följeslagare. Terrakotta, rosa och teak används som egna sektionsfärger, aldrig flera i samma vy.
 - **Luft.** Sektioner har 120px över och 140px under. Sidmarginalen är 56px.
@@ -19,7 +19,7 @@ Typsnitt: **Martian Mono** (Google Fonts, OFL), variabel vikt 100–800. Filen l
 | Stil | Storlek / rad / spärrning | Används till |
 |---|---|---|
 | `display` | 128px / 1 / 0.02em (clamp 56–128px, `9vw`) | Stora tal, till exempel klockan i Stockholm och Bangkok |
-| `body` | 14px / 1.7 / 0.02em | Löptext i längre stycken: artiklar, FAQ, villkor, portal, nyhetsbrev. Gemener |
+| `body` | 12px / 1.7 / 0.02em | Löptext i längre stycken: artiklar, FAQ, villkor, portal, nyhetsbrev. Gemener |
 | `label` | 12px / 1.2 / 0.16em | Meny, knappar, etiketter, korta texter, bildtexter. Versaler |
 | `quote` | 12px / 2.1 / 0.16em | Citat och luftiga stycken, max 440px |
 | `index` | 10px / 1.2 / 0 | Siffror i tidslinjer och arkiv |

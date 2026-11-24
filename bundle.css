@@ -1,7 +1,7 @@
 /* Studio Midori – komponentklasser. Värden kommer från tokens.css. */
 .sm-label,.sm-body,.sm-quote,.sm-index,.sm-display{font-family:var(--font-mono);font-weight:400;color:var(--text);margin:0}
 .sm-label{font-size:12px;line-height:1.2;letter-spacing:.16em;text-transform:uppercase}
-.sm-body{font-size:14px;line-height:1.7;letter-spacing:.02em;max-width:var(--measure-l)}
+.sm-body{font-size:12px;line-height:1.7;letter-spacing:.02em;max-width:var(--measure-l)}
 .sm-quote{font-size:12px;line-height:2.1;letter-spacing:.16em;text-transform:uppercase;max-width:var(--measure-m);text-wrap:pretty}
 .sm-index{font-size:10px;line-height:1.2;letter-spacing:0;text-transform:uppercase}
 .sm-display{font-size:clamp(56px,9vw,128px);line-height:1;letter-spacing:.02em}
@@ -51,7 +51,7 @@ a.sm-body-link,.sm-body a,.sm-accordion p a{color:var(--text);text-decoration:un
 .sm-accordion summary::-webkit-details-marker{display:none}
 .sm-accordion summary::after{content:"+"}
 .sm-accordion details[open] summary::after{content:"\2212"}
-.sm-accordion p{margin:0;padding:0 0 30px;max-width:var(--measure-l);font:400 14px/1.7 var(--font-mono);letter-spacing:.02em;color:var(--text)}
+.sm-accordion p{margin:0;padding:0 0 30px;max-width:var(--measure-l);font:400 12px/1.7 var(--font-mono);letter-spacing:.02em;color:var(--text)}
 
 /* Rad i prislista / tabell */
 .sm-list{display:flex;flex-direction:column;border-bottom:var(--hairline) solid var(--border)}

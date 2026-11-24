@@ -55,7 +55,7 @@ test("mail output: single-quoted stack, px line-height, capitals only where the 
   const label = emailTy("label")
   assert.match(label, /font-size:12px/)
   assert.match(label, /text-transform:uppercase/)
-  assert.match(emailTy("body"), /line-height:24px/)
+  assert.match(emailTy("body"), /line-height:20px/)
   assert.doesNotMatch(emailTy("body"), /text-transform/)
   assert.throws(() => emailTy("nope"))
 })
